@@ -4,7 +4,7 @@ x-airflow-common:
   image: apache/airflow:latest
   environment:
     - AIRFLOW__CORE__EXECUTOR=LocalExecutor
-    - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflowpassword@airflow:5432/airflow
+    - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflowpassword@postgres:5432/airflow
     - AIRFLOW__CORE__FERNET_KEY=FB0o_zt4e3Ziq3LdUUO7F2Z95cvFFx16hU8jTeR1ASM=
     - AIRFLOW__CORE__LOAD_EXAMPLES=False
     - AIRFLOW__CORE__LOGGING_LEVEL=INFO
@@ -49,10 +49,10 @@ services:
     ports:
       - 8080:8080
     container_name: airflow_webserver
-    restart: always
+    restart: on-failure
 
   airflow-scheduler:
     << : *airflow-common
     command: airflow scheduler
     container_name: airflow_scheduler
-    restart: always
+    restart: on-failure
