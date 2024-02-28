@@ -287,5 +287,13 @@ services:
     ports:
       - "5430:80"
     restart: always
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+      - pgadmin-data:/var/lib/pgadmin/storage
+      - pgadmin-data:/var/lib/pgadmin/sessions
+      - pgadmin-data:/var/lib/pgadmin/pgadmin4.db
+
+
 volumes:
   postgres-db-volume:
+  pgadmin-data:
