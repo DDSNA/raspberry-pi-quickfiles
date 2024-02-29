@@ -292,6 +292,7 @@ services:
       - pgadmin-data:/var/lib/pgadmin/storage
       - pgadmin-data:/var/lib/pgadmin/sessions
       - pgadmin-data:/var/lib/pgadmin/pgadmin4.db
+      - ./config_local.py:/pgadmin4/config_local.py
 
 
 volumes:
