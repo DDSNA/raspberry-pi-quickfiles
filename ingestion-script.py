@@ -59,13 +59,13 @@ def main(params):
 
 
 if __name__ == "__main__":
-    parser.add_argument('user', help ='username for postgres')
-    parser.add_argument('password', help ='password for postgres')
-    parser.add_argument('host', help ='host address for postgres')
-    parser.add_argument('port', help ='host port for postgres')
-    parser.add_argument('db', help ='database name for postgres')
-    parser.add_argument('table-name', help ='name of table in postgres')
-    parser.add_argument('url', help ='url of the csv file')
+    parser.add_argument('--user', help ='username for postgres')
+    parser.add_argument('--password', help ='password for postgres')
+    parser.add_argument('--host', help ='host address for postgres')
+    parser.add_argument('--port', help ='host port for postgres')
+    parser.add_argument('--db', help ='database name for postgres')
+    parser.add_argument('--table-name', help ='name of table in postgres')
+    parser.add_argument('--url', help ='url of the csv file')
 
     args = parser.parse_args()
 
