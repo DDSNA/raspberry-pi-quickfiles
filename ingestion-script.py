@@ -10,6 +10,7 @@ from pathlib import Path
 import requests
 import argparse
 import os
+from time import time
 # parser setup
 
 parser = argparse.ArgumentParser(description='Ingest CSV data to Postgres')
@@ -44,24 +45,29 @@ def main(params):
 
     df_iter = pd.read_csv(csv_name, iterator=True, chunksize=100000)
     df = next(df_iter)
-    
-    query_all_pgdatabase_tables = """
-    SELECT *
-    FROM pg_catalog.pg_tables
 
-    WHERE schemaname != 'pg_catalog' AND
-        schemaname != 'information_schema';
-    """
-
-    pd.read_sql(sql=query_all_pgdatabase_tables, con=engine)
 
     df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
     df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
 
+    df.head(n=0).to_sql(name=sqlalchemy_table_name, con=engine, if_exists='replace', schema="powerbi_sets")
+    df.to_sql(name=sqlalchemy_table_name, schema="powerbi_sets", chunksize=25000, con=engine, if_exists='append')
 
-    df.to_sql(name=sqlalchemy_table_name, con=engine, schema="powerbi_sets", chunksize=25000)
+    while True:
+        try:
+            t_start = time()
+            df = next(df_iter)
+            df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+            df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
 
+            df.to_sql(name=sqlalchemy_table_name, con=engine, if_exists='append')
+            t_end = time()
 
+            print('inserted another chunk, took %.3f second' % (t_end - t_start))
+        except StopIteration:
+            print("Finished ingesting data into the postgres database")
+            break
+        
 if __name__ == "__main__":
     parser.add_argument('--user', help ='username for postgres')
     parser.add_argument('--password', help ='password for postgres')
