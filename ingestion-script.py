@@ -38,9 +38,10 @@ def main(params):
     os.system(f"wget {csv_url} -O {csv_name}")
 
     engine = sqlalchemy.create_engine(f"{sqlalchemy_db}+{sqlalchemy_db_jdbc}://{sqlalchemy_username}:{sqlalchemy_password}@{sqlalchemy_host_address}:{sqlalchemy_host_port}/{sqlalchemy_host_database}")
-    df = pd.read_csv(csv_name)
 
-
+    df_iter = pd.read_csv(csv_name, iterator=True, chunksize=100000)
+    df = next(df_iter)
+    
     query_all_pgdatabase_tables = """
     SELECT *
     FROM pg_catalog.pg_tables
