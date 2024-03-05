@@ -33,7 +33,10 @@ def main(params):
     sqlalchemy_table_name = params.table_name
     csv_url = params.url
 
-    csv_name = 'output.csv'
+    if csv_url.endswith('.csv.gz'):
+        csv_name = 'output.csv.gz'
+    else:
+        csv_name = 'output.csv'
 
     os.system(f"wget {csv_url} -O {csv_name}")
 
