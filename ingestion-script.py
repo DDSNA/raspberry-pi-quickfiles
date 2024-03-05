@@ -60,14 +60,14 @@ def main(params):
             df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
             df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
 
-            df.to_sql(name=sqlalchemy_table_name, con=engine, if_exists='append')
+            df.to_sql(name=sqlalchemy_table_name, con=engine, if_exists='append', schema="powerbi_sets")
             t_end = time()
 
             print('inserted another chunk, took %.3f second' % (t_end - t_start))
         except StopIteration:
             print("Finished ingesting data into the postgres database")
             break
-        
+
 if __name__ == "__main__":
     parser.add_argument('--user', help ='username for postgres')
     parser.add_argument('--password', help ='password for postgres')
