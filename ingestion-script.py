@@ -13,23 +13,23 @@ import os
 # parser setup
 
 parser = argparse.ArgumentParser(description='Ingest CSV data to Postgres')
-
-# user
-#password
-#host
-#port
-#database name
-#table name
-#url of the csv
     
 def main(params):
+    # sqlalchemy_db = "postgresql"
+    # sqlalchemy_db_jdbc = "psycopg2"
+    # sqlalchemy_username = params.user
+    # sqlalchemy_password = params.password
+    # sqlalchemy_host_address = params.host
+    # sqlalchemy_host_port = params.port
+    # sqlalchemy_host_database = params.db
+    # sqlalchemy_table_name = params.table_name
     sqlalchemy_db = "postgresql"
     sqlalchemy_db_jdbc = "psycopg2"
-    sqlalchemy_username = params.user
-    sqlalchemy_password = params.password
-    sqlalchemy_host_address = params.host
-    sqlalchemy_host_port = params.port
-    sqlalchemy_host_database = params.db
+    sqlalchemy_username = "databricks_user"
+    sqlalchemy_password = "Databricks"
+    sqlalchemy_host_address = "viaduct.proxy.rlwy.net"
+    sqlalchemy_host_port = "53745"
+    sqlalchemy_host_database = "data_analytics"
     sqlalchemy_table_name = params.table_name
     csv_url = params.url
 
