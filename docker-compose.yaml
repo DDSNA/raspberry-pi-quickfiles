@@ -287,8 +287,6 @@ services:
     ports:
       - "5430:80"
     restart: always
-    volumes:
-      - pgadmin-data:/var/lib/pgadmin
 
 
 volumes:
