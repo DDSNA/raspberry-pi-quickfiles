@@ -293,3 +293,5 @@ services:
 
 volumes:
   postgres-db-volume:
+  pgadmin-data:
+    external: true
