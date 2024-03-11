@@ -294,7 +294,7 @@ services:
   spark-ui:
     image: bitnami/spark:latest
     environment:
-      SPARK_DRIVER_HOST: 192.168.1.2
+      SPARK_DRIVER_HOST: 192.168.0.38
       SPARK_MASTER: spark://spark-master:7077
       MAIN_CLASS: Main
     ports:
