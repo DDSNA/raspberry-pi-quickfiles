@@ -282,8 +282,8 @@ services:
   pg-admin-init:
     image: dpage/pgadmin4:latest
     environment:
-      PGADMIN_DEFAULT_EMAIL: danserban20@gmail.com
-      PGADMIN_DEFAULT_PASSWORD: dan
+      - PGADMIN_DEFAULT_EMAIL=danserban20@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=dan
     ports:
       - "5430:80"
     restart: always
