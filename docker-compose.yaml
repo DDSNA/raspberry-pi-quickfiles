@@ -292,7 +292,7 @@ services:
 
 
   spark-ui:
-    image: apache/spark-py:latest
+    image: bitnami/spark:latest
     environment:
       SPARK_DRIVER_HOST: 192.168.0.38
       SPARK_MASTER: spark://spark-master:7077
