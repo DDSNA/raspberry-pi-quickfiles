@@ -30,15 +30,15 @@ def basic_dag():
             stmt = """
                 SELECT * 
                 FROM prun_data."Dimitri Company Orders"
-            """
+                """
             dataframe = pd.read_sql(
                 sql=stmt,
                 con=engine
-            )
+                )
             jsoned_dataframe = dataframe.to_json()
-            return jsoned_dataframe
         except Exception as e:
                 print("Task failed due to: ", e)
+        return jsoned_dataframe
 
     @task()
     def transform(jsonified_data: dict):
