@@ -28,17 +28,17 @@ def basic_dag():
         engine = create_engine('postgresql://databricks_user:Databricks@viaduct.proxy.rlwy.net/railway')
         try:
             stmt = """
-                SELECT * 
-                FROM prun_data."Dimitri Company Orders"
-                """
+            SELECT * 
+            FROM prun_data."Dimitri Company Orders"
+            """
             dataframe = pd.read_sql(
                 sql=stmt,
                 con=engine
-                )
+            )
             jsoned_dataframe = dataframe.to_json()
+            return jsoned_dataframe
         except Exception as e:
-                print("Task failed due to: ", e)
-        return jsoned_dataframe
+            print("Task failed due to: ", e)
 
     @task()
     def transform(jsonified_data: dict):
