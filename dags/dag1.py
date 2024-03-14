@@ -44,9 +44,12 @@ def basic_dag():
     def transform(jsonified_data: dict):
         print("Transforming data")
         order_cost = 0
-        for individual_cost in jsonified_data.values():
-            order_cost += individual_cost
-        return  {"total_order_value": order_cost}
+        if jsonified_data is not None:
+            for individual_cost in jsonified_data.values():
+                order_cost += individual_cost
+        else:
+            print("No data to transform")
+        return {"total_order_value": order_cost}
 
     @task()
     def load(total_order_value : float):
