@@ -51,11 +51,13 @@ def basic_dag():
             print("Task failed due to: ", e)
 
     @task()
-    def transform(jsonified_data: dict):
+    def transform(jsonified_data: str):
         print("Transforming data")
         order_cost = 0
         if jsonified_data is not None:
-            for individual_cost in jsonified_data.values():
+            # Parse the JSON string back into a dictionary
+            data_dict = json.loads(jsonified_data)
+            for individual_cost in data_dict.values():
                 order_cost += individual_cost
         else:
             print("No data to transform")
