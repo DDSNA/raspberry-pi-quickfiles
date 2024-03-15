@@ -69,9 +69,9 @@ def basic_dag():
         return {"total_order_value": order_cost}
     
     @task()
-    def load(dataframe: pd.DataFrame):
-        json = dataframe
-        df = pd.read_json(json)
+    def load(json_value: dict):
+        print("Loading data")
+        df = pd.read_json(json_value, typ='series')
         try:
             display(df)
         except Exception as e:
