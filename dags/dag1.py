@@ -62,9 +62,14 @@ def basic_dag():
         return {"total_order_value": order_cost}
 
     @task()
-    def load(total_order_value : float):
-        print("Loading data")
-        print(f"Total order cost is: {total_order_value:.2f}")
+    def load(dataframe: pd.DataFrame):
+        json = dataframe
+        df = pd.read_json(json)
+        try:
+            display(df)
+        except Exception as e:
+            print("Task failed due to: ", e)
+            print(df)
 
     user_total_order_value = extract()
     order_summary = transform(user_total_order_value)
