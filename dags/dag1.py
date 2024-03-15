@@ -31,6 +31,7 @@ sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
      description="Simple dag",
      default_args=default_args
      )
+
 def basic_dag():
     @task()
     def extract():
@@ -56,14 +57,17 @@ def basic_dag():
         print("Transforming data")
         order_cost = 0
         if jsonified_data is not None:
-            # Parse the JSON string back into a dictionary
             data_dict = json.loads(jsonified_data)
-            for individual_cost in data_dict.values():
-                order_cost += individual_cost
+            for individual_data in data_dict.values():
+                # Assuming each individual_data is a dictionary with a 'cost' key
+                if 'cost' in individual_data:
+                    order_cost += individual_data['cost']
+                else:
+                    print(f"No 'cost' key found in {individual_data}")
         else:
             print("No data to transform")
         return {"total_order_value": order_cost}
-
+    
     @task()
     def load(dataframe: pd.DataFrame):
         json = dataframe
