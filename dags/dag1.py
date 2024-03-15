@@ -9,6 +9,7 @@ from sqlalchemy import create_engine, select
 import pandas as pd
 import psycopg2
 import os
+import json
 
 default_args = {
     'owner': 'airflow',
