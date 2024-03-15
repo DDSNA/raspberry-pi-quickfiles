@@ -5,8 +5,10 @@ from airflow import DAG
 from airflow.decorators import dag, task
 
 from sqlalchemy import create_engine, select
-import pandas as pd
 
+import pandas as pd
+import psycopg2
+import os
 
 default_args = {
     'owner': 'airflow',
@@ -15,7 +17,15 @@ default_args = {
     'schedule_interval': '@daily'
 }
 
-
+sqlalchemy_db = os.getenv("SQLALCHEMY_DB")
+sqlalchemy_db_jdbc = os.getenv("SQLALCHEMY_DB_JDBC")
+sqlalchemy_username = os.getenv("SQLALCHEMY_USERNAME")
+sqlalchemy_password = os.getenv("SQLALCHEMY_PASSWORD")
+sqlalchemy_host_address = os.getenv("SQLALCHEMY_HOST_ADDRESS")
+sqlalchemy_host_port = os.getenv("SQLALCHEMY_HOST_PORT")
+# this is railway not data analytics
+sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
+    
 @dag(".dan_dag_1",
      description="Simple dag",
      default_args=default_args
@@ -25,7 +35,7 @@ def basic_dag():
     def extract():
         print("Extracting data")
         # this should be a secret, consider making all that a .env
-        engine = create_engine('postgresql://databricks_user:Databricks@viaduct.proxy.rlwy.net/railway')
+        engine = create_engine(f"{sqlalchemy_db}+{sqlalchemy_db_jdbc}://{sqlalchemy_username}:{sqlalchemy_password}@{sqlalchemy_host_address}:{sqlalchemy_host_port}/{sqlalchemy_host_database}")
         try:
             stmt = """
             SELECT * 
