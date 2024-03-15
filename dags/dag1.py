@@ -71,7 +71,9 @@ def basic_dag():
     @task()
     def load(json_value: dict):
         print("Loading data")
-        df = pd.read_json(json_value, typ='series')
+        # Assuming json_value is a dictionary with a single key-value pair
+        # where the key is the column name and the value is the data
+        df = pd.DataFrame(json_value)
         try:
             display(df)
         except Exception as e:
@@ -80,6 +82,6 @@ def basic_dag():
 
     user_total_order_value = extract()
     order_summary = transform(user_total_order_value)
-    load(order_summary["total_order_value"])
+    load({"total_order_value": order_summary["total_order_value"]})
 
 basic_dag()
