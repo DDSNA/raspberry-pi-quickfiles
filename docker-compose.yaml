@@ -352,7 +352,7 @@ services:
   # #       - "4042:4040"
 
   notebook:
-    image: jupyter/all-spark-notebook
+    image: jupyter/pyspark-notebook
     ports:
       - "8888:8888"
     command: start-notebook.sh --NotebookApp.token='abcd1234'
