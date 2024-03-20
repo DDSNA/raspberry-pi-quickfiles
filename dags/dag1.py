@@ -13,8 +13,8 @@ import json
 
 default_args = {
     'owner': 'airflow',
-    'start_date': datetime(2024, 3, 14),
-    'retries': 1,
+    'start_date': datetime(2024, 3, 20),
+    'retries': 3,
     'schedule_interval': '@daily'
 }
 
@@ -72,14 +72,15 @@ def basic_dag():
     @task()
     def load(json_value: dict):
         print("Loading data")
-        # Assuming json_value is a dictionary with a single key-value pair
-        # where the key is the column name and the value is the data
-        df = pd.DataFrame(json_value)
         try:
+            # Assuming json_value is a dictionary with a single key-value pair
+            # where the key is the column name and the value is the data
+            df = pd.DataFrame.from_dict(json_value, orient='index', columns=['total_order_value'])
             display(df)
         except Exception as e:
             print("Task failed due to: ", e)
-            print(df)
+            print(json_value)
+
 
     user_total_order_value = extract()
     order_summary = transform(user_total_order_value)
