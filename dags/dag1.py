@@ -15,7 +15,7 @@ default_args = {
     'owner': 'airflow',
     'start_date': datetime(2024, 3, 20),
     'retries': 3,
-    'schedule_interval': '0 */3 * * *'
+    'schedule_interval': '*/20 * * * *'
 }
 
 sqlalchemy_db = os.getenv("SQLALCHEMY_DB")
