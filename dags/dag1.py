@@ -90,7 +90,7 @@ def basic_dag():
         print("Uploading to postgresql in schema prun_data and table order_summary")
         try:
             engine = create_engine(f"{sqlalchemy_db}+{sqlalchemy_db_jdbc}://{sqlalchemy_username}:{sqlalchemy_password}@{sqlalchemy_host_address}:{sqlalchemy_host_port}/{sqlalchemy_host_database}")
-            df.to_sql('order_summary', con=engine, if_exists='append', schema='prun_data')
+            df.to_sql('order_summary', con=engine, if_exists='replace', schema='prun_data')
         except Exception as e:
             print("Task failed due to: ", e)
             print(d)
