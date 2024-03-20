@@ -89,15 +89,16 @@ def basic_dag():
     def upload_to_db(df: pd.DataFrame):
         print("Uploading to postgresql in schema prun_data and table order_summary")
         try:
+            df = df
             engine = create_engine(f"{sqlalchemy_db}+{sqlalchemy_db_jdbc}://{sqlalchemy_username}:{sqlalchemy_password}@{sqlalchemy_host_address}:{sqlalchemy_host_port}/{sqlalchemy_host_database}")
             df.to_sql('order_summary', con=engine, if_exists='replace', schema='prun_data')
         except Exception as e:
             print("Task failed due to: ", e)
-            print(d)
+            print(df)
 
     user_total_order_value = extract()
     order_summary = transform(user_total_order_value)
     df = load(order_summary)
-    upload_to_db()
+    upload_to_db(df)
 
 basic_dag()
