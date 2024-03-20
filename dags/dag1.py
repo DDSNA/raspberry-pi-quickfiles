@@ -62,6 +62,7 @@ def basic_dag():
                 # Assuming each individual_data is a dictionary with a 'cost' key
                 if 'cost' in individual_data:
                     order_cost += individual_data['cost']
+                    print(f"Cost found: {individual_data['cost']}")
                 else:
                     print(f"No 'cost' key found in {individual_data}")
         else:
