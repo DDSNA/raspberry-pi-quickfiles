@@ -72,14 +72,11 @@ def basic_dag():
     @task()
     def load(json_value: dict):
         print("Loading data")
-        engine = create_engine(f"{sqlalchemy_db}+{sqlalchemy_db_jdbc}://{sqlalchemy_username}:{sqlalchemy_password}@{sqlalchemy_host_address}:{sqlalchemy_host_port}/{sqlalchemy_host_database}")
         try:
             # Assuming json_value is a dictionary with a single key-value pair
             # where the key is the column name and the value is the data
             df = pd.DataFrame.from_dict(json_value, orient='index', columns=['total_order_value'])
             display(df)
-            
-            df.to_sql('order_summary', con=engine, if_exists='append', schema='prun_data')
         except Exception as e:
             print("Task failed due to: ", e)
             print(json_value)
