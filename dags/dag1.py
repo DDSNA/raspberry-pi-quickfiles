@@ -84,6 +84,6 @@ def basic_dag():
     user_total_order_value = extract()
     order_summary = transform(user_total_order_value)
     load({"total_order_value": order_summary["total_order_value"]})
+    extract >> transform >> load
 
 basic_dag()
-extract >> transform >> load
