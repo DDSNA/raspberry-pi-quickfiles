@@ -302,10 +302,10 @@ services:
     image: bitnami/spark:latest
     environment:
     # needs to be updated whenever I relocate the raspberry pi
-      # SPARK_DRIVER_HOST: "0.0.0.0"
-      # SPARK_DRIVER_BINDADDRESS: "0.0.0.0"
-      # SPARK_MASTER: spark://spark-master:7077
-      # MAIN_CLASS: Main
+      SPARK_DRIVER_HOST: "0.0.0.0"
+      SPARK_DRIVER_BINDADDRESS: "0.0.0.0"
+      SPARK_MASTER: spark://spark-master:7077
+      MAIN_CLASS: Main
     ports:
       - "4040:4040"
       - "4041:8080"
@@ -314,6 +314,7 @@ services:
       
   spark-master:
       image: bitnami/spark:latest
+      hostname: 192.168.1.139
       ports:
         - "9092:8080"
         - "7077:7077"
@@ -353,17 +354,17 @@ services:
   # #       - "8082:8081"
   # #       - "4043:4040"
 
-  notebook:
-    image: jupyter/pyspark-notebook
-    depends_on:
-      - airflow-webserver
-    ports:
-      - "8888:8888"
-    command: start-notebook.sh --NotebookApp.token='abcd1234'
-    volumes:
-      - notebook-data:/home/jovyan/work
-    networks:
-      - spark-network
+  # notebook:
+  #   image: jupyter/pyspark-notebook
+  #   depends_on:
+  #     - airflow-webserver
+  #   ports:
+  #     - "8888:8888"
+  #   command: start-notebook.sh --NotebookApp.token='abcd1234'
+  #   volumes:
+  #     - notebook-data:/home/jovyan/work
+  #   networks:
+  #     - spark-network
 
 volumes:
   postgres-db-volume:
