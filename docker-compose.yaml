@@ -314,7 +314,6 @@ services:
       
   spark-master:
       image: bitnami/spark:latest
-      hostname: 192.168.1.139
       ports:
         - "9092:8080"
         - "7077:7077"
