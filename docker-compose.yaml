@@ -349,6 +349,7 @@ services:
         - "8081:8080"
         - "4042:4040"
         - "7000:7000"
+        - "7078:7077"
       networks:
         - spark-network
       volumes:
