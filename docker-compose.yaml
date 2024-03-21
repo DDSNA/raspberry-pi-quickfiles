@@ -347,6 +347,8 @@ services:
       - SPARK_EXECUTOR_MEMORY=2G
       - SPARK_WORKLOAD=worker
       - SPARK_LOCAL_IP=192.168.1.139
+      - SPARK_LOCAL_HOSTNAME=192.168.1.139
+      - SPARK_PUBLIC_DNS=spark-worker-a
       ports:
         - "8081:8081"
         - "8082:8080"
