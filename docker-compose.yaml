@@ -345,8 +345,8 @@ services:
       networks:
         - spark-network
       volumes:
-        - spark-master-volume:/opt/spark-apps
-        - spark-master-volume:/opt/spark-data
+        - spark-worker-volume:/opt/spark-apps
+        - spark-worker-volume:/opt/spark-data
 
   # # spark-worker-2:
   # #     image: apache/spark-py:latest
