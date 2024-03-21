@@ -298,19 +298,19 @@ services:
   #   - pgadmin-data:/var/lib/pgadmin
 
 
-  spark-ui:
-    image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
-    environment:
-    # needs to be updated whenever I relocate the raspberry pi
-      SPARK_DRIVER_HOST: "0.0.0.0"
-      SPARK_DRIVER_BINDADDRESS: "0.0.0.0"
-      SPARK_MASTER: spark://spark-master:7077
-      MAIN_CLASS: Main
-    ports:
-      - "4039:4040"
-      - "4041:8080"
-    networks:
-      - spark-network
+  # spark-ui:
+  #   image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
+  #   environment:
+  #   # needs to be updated whenever I relocate the raspberry pi
+  #     SPARK_DRIVER_HOST: "0.0.0.0"
+  #     SPARK_DRIVER_BINDADDRESS: "0.0.0.0"
+  #     SPARK_MASTER: spark://spark-master:7077
+  #     MAIN_CLASS: Main
+  #   ports:
+  #     - "4039:4040"
+  #     - "4041:8080"
+  #   networks:
+  #     - spark-network
       
   spark-master:
       image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
