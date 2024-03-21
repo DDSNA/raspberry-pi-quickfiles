@@ -301,7 +301,8 @@ services:
   spark-ui:
     image: bitnami/spark:latest
     environment:
-      SPARK_DRIVER_HOST: 192.168.0.38
+    # needs to be updated whenever I relocate the raspberry pi
+      SPARK_DRIVER_HOST: 192.168.1.139
       SPARK_MASTER: spark://spark-master:7077
       MAIN_CLASS: Main
     ports:
