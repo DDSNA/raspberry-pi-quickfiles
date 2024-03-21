@@ -312,99 +312,92 @@ services:
   #   networks:
   #     - spark-network
       
-  spark-ui:
-    image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
-    environment:
-      SPARK_DRIVER_HOST: "0.0.0.0"
-      SPARK_DRIVER_BINDADDRESS: "0.0.0.0"
-      SPARK_MASTER: "spark://spark-master:7077"  # Enclose the value in double quotes
-      MAIN_CLASS: "Main"  # Enclose the value in double quotes
-    ports:
-      - "4039:4040"
-      - "4041:8080"
-    networks:
-      - spark-network
+    spark-master:
+      image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
+      environment:
+        SPARK_MODE: "master"  # Enclose the value in double quotes
+        SPARK_MASTER_PORT_NUMBER: 7077
+        SPARK_MASTER_WEBUI_PORT_NUMBER: 8080
+        SPARK_MASTER_LOG_LEVEL: "INFO"  # Enclose the value in double quotes
+        SPARK_MASTER_HOST: "spark-master"  # Enclose the value in double quotes
+      ports:
+        - "7080:8080"
+        - "7077:7077"
+        - "4040:4040"
+      networks:
+        - spark-network
+      volumes:
+        - spark-master-volume:/opt/spark-apps
+        - spark-master-volume:/opt/spark-data
+      healthcheck:
+        test: ["CMD", "curl", "--fail", "http://localhost:8080/"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
+        start_period: 30s
 
-  spark-master:
-    image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
-    environment:
-      SPARK_MODE: "master"  # Enclose the value in double quotes
-      SPARK_MASTER_PORT_NUMBER: 7077
-      SPARK_MASTER_WEBUI_PORT_NUMBER: 8080
-      SPARK_MASTER_LOG_LEVEL: "INFO"  # Enclose the value in double quotes
-      SPARK_MASTER_HOST: "spark-master"  # Enclose the value in double quotes
-    ports:
-      - "7080:8080"
-      - "7077:7077"
-      - "4040:4040"
-    networks:
-      - spark-network
-    volumes:
-      - spark-master-volume:/opt/spark-apps
-      - spark-master-volume:/opt/spark-data
+    spark-worker-a:
+      image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
+      depends_on:
+        - spark-master
+      environment:
+        SPARK_MASTER: "spark://spark-master:7077"  # Enclose the value in double quotes
+        SPARK_WORKER_CORES: 1
+        SPARK_WORKER_MEMORY: "1G"  # Enclose the value in double quotes
+        SPARK_DRIVER_MEMORY: "1G"  # Enclose the value in double quotes
+        SPARK_EXECUTOR_MEMORY: "1G"  # Enclose the value in double quotes
+        SPARK_WORKLOAD: "worker"  # Enclose the value in double quotes
+        SPARK_LOCAL_IP: "spark-worker-a"  # Enclose the value in double quotes
+      ports:
+        - "8081:8080"
+        - "4042:4040"
+        - "7000:7000"
+      networks:
+        - spark-network
+      volumes:
+        - spark-worker-volume:/opt/spark-apps
+        - spark-worker-volume:/opt/spark-data
 
-  spark-worker-a:
-    image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
-    depends_on:
-      - spark-master
-    environment:
-      SPARK_MASTER: "spark://spark-master:7077"  # Enclose the value in double quotes
-      SPARK_WORKER_CORES: 1
-      SPARK_WORKER_MEMORY: "1G"  # Enclose the value in double quotes
-      SPARK_DRIVER_MEMORY: "1G"  # Enclose the value in double quotes
-      SPARK_EXECUTOR_MEMORY: "1G"  # Enclose the value in double quotes
-      SPARK_WORKLOAD: "worker"  # Enclose the value in double quotes
-      SPARK_LOCAL_IP: "spark-worker-a"  # Enclose the value in double quotes
-    ports:
-      - "8081:8080"
-      - "4042:4040"
-      - "7000:7000"
-    networks:
-      - spark-network
-    volumes:
-      - spark-worker-volume:/opt/spark-apps
-      - spark-worker-volume:/opt/spark-data
+    # # spark-worker-2:
+    # #   image: apache/spark-py:latest
+    # #   depends_on:
+    # #     - spark-master
+    # #   environment:
+    # #     SPARK_MODE: "worker"  # Enclose the value in double quotes
+    # #     SPARK_WORKER_CORES: 1
+    # #     SPARK_WORKER_MEMORY: "4g"  # Enclose the value in double quotes
+    # #     SPARK_MASTER_URL: "spark://spark-master:7077"  # Enclose the value in double quotes
+    # #   networks:
+    # #     - spark-network
+    # #   ports:
+    # #     - "8082:8081"
+    # #     - "4043:4040"
 
-  # # spark-worker-2:
-  # #   image: apache/spark-py:latest
-  # #   depends_on:
-  # #     - spark-master
-  # #   environment:
-  # #     SPARK_MODE: "worker"  # Enclose the value in double quotes
-  # #     SPARK_WORKER_CORES: 1
-  # #     SPARK_WORKER_MEMORY: "4g"  # Enclose the value in double quotes
-  # #     SPARK_MASTER_URL: "spark://spark-master:7077"  # Enclose the value in double quotes
-  # #   networks:
-  # #     - spark-network
-  # #   ports:
-  # #     - "8082:8081"
-  # #     - "4043:4040"
+    notebook:
+      image: jupyter/pyspark-notebook
+      depends_on:
+        - airflow-webserver
+      ports:
+        - "8888:8888"
+      command: start-notebook.sh --NotebookApp.token='abcd1234'
+      volumes:
+        - notebook-data:/home/jovyan/work
+      networks:
+        - spark-network
 
-  notebook:
-    image: jupyter/pyspark-notebook
-    depends_on:
-      - airflow-webserver
-    ports:
-      - "8888:8888"
-    command: start-notebook.sh --NotebookApp.token='abcd1234'
-    volumes:
-      - notebook-data:/home/jovyan/work
-    networks:
-      - spark-network
+  volumes:
+    postgres-db-volume:
+    pgadmin-data:
+      name: pgadmin-data
+    spark-data:
+      name: spark-data
+    notebook-data:
+      name: notebook-data
+    spark-worker-volume:
+      name: spark-worker-volume
+    spark-master-volume:
+      name: spark-master-volume
 
-volumes:
-  postgres-db-volume:
-  pgadmin-data:
-    name: pgadmin-data
-  spark-data:
-    name: spark-data
-  notebook-data:
-    name: notebook-data
-  spark-worker-volume:
-    name: spark-worker-volume
-  spark-master-volume:
-    name: spark-master-volume
-
-networks:
-  spark-network:
-    name: spark-network
+  networks:
+    spark-network:
+      name: spark-network
