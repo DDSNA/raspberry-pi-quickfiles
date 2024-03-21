@@ -330,18 +330,22 @@ services:
         - spark-master-volume:/opt/spark-apps
         - spark-master-volume:/opt/spark-data
 
-  spark-worker-1:
+  spark-worker-a:
       image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
       depends_on:
         - spark-master
       environment:
-        SPARK_MODE: worker
-        SPARK_WORKER_CORES: 1
-        SPARK_WORKER_MEMORY: 4g
-        SPARK_MASTER_URL: spark://spark-master:7077
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_DRIVER_MEMORY=1G
+      - SPARK_EXECUTOR_MEMORY=1G
+      - SPARK_WORKLOAD=worker
+      - SPARK_LOCAL_IP=spark-worker-a
       ports:
-        - "8081:8081"
+        - "8081:8080"
         - "4042:4040"
+        - "7000:7000"
       networks:
         - spark-network
       volumes:
