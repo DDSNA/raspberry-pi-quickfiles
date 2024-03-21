@@ -347,7 +347,6 @@ services:
       - SPARK_EXECUTOR_MEMORY=4G
       - SPARK_WORKLOAD=worker
       - SPARK_LOCAL_IP=spark-worker-a
-      - SPARK_LOCAL_HOSTNAME=spark-worker-a
       ports:
         - "8081:8081"
         - "8082:8080"
@@ -376,17 +375,17 @@ services:
   # #       - "8082:8081"
   # #       - "4043:4040"
 
-  notebook:
-    image: jupyter/pyspark-notebook
-    depends_on:
-      - spark-master
-    ports:
-      - "8888:8888"
-    command: start-notebook.sh --NotebookApp.token='abcd1234'
-    volumes:
-      - notebook-data:/home/jovyan/work
-    networks:
-      - spark-network
+  # notebook:
+  #   image: jupyter/pyspark-notebook
+  #   depends_on:
+  #     - spark-master
+  #   ports:
+  #     - "8888:8888"
+  #   command: start-notebook.sh --NotebookApp.token='abcd1234'
+  #   volumes:
+  #     - notebook-data:/home/jovyan/work
+  #   networks:
+  #     - spark-network
 
 volumes:
   postgres-db-volume:
