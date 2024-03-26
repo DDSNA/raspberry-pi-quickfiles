@@ -22,14 +22,9 @@ ENV HADOOP_HOME=${HADOOP_HOME:-"/opt/hadoop"}
 RUN mkdir -p ${HADOOP_HOME} && mkdir -p ${SPARK_HOME}
 WORKDIR ${SPARK_HOME}
 
-RUN curl https://www.apache.org/dyn/closer.lua/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3-scala2.13.tgz -o spark-3.5.1-bin-hadoop3-scala2.13.tgz \
- && curl https://www.apache.org/dist/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3-scala2.13.tgz.asc -o spark-3.5.1-bin-hadoop3-scala2.13.tgz.asc \
- && curl https://www.apache.org/dist/spark/KEYS -o KEYS \
- && gpg --import KEYS \
- && gpg --verify spark-3.5.1-bin-hadoop3-scala2.13.tgz.asc spark-3.5.1-bin-hadoop3-scala2.13.tgz \
+RUN curl https://dlcdn.apache.org/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3.tgz -o spark-3.5.1-bin-hadoop3-scala2.13.tgz \
  && tar xvzf spark-3.5.1-bin-hadoop3-scala2.13.tgz --directory /opt/spark --strip-components 1 \
- && rm -rf spark-3.5.1-bin-hadoop3-scala2.13.tgz spark-3.5.1-bin-hadoop3-scala2.13.tgz.asc KEYS
-
+ && rm -rf spark-3.5.1-bin-hadoop3-scala2.13.tgz
 
 COPY conf/spark-defaults.conf "$SPARK_HOME/conf"
 
