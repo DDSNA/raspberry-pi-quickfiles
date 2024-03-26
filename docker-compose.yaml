@@ -318,17 +318,16 @@ services:
       image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
       environment:
         SPARK_MODE: master
-        SPARK_MASTER_PORT_NUMBER: 7077
-        SPARK_MASTER_WEBUI_PORT_NUMBER: 8080
+        SPARK_MASTER_PORT_NUMBER: "7077"
+        SPARK_MASTER_WEBUI_PORT_NUMBER: "8080"
         SPARK_MASTER_LOG_LEVEL: INFO
-        SPARK_MASTER_HOST: spark-master
+        SPARK_MASTER_HOST: "192.168.1.139"
       ports:
         - "7080:8080"
         - "7077:7077"
         - "4040:4040"
       networks:
         - spark-network
-      network_mode: "host"
       volumes:
         - spark-master-volume:/opt/spark-apps
         - spark-master-volume:/opt/spark-data
@@ -341,13 +340,13 @@ services:
       depends_on:
         - spark-master
       environment:
-      - SPARK_MASTER=spark://spark-master:7077
-      - SPARK_WORKER_CORES=1
-      - SPARK_WORKER_MEMORY=4G
-      - SPARK_DRIVER_MEMORY=1G
-      - SPARK_EXECUTOR_MEMORY=4G
-      - SPARK_WORKLOAD=worker
-      - SPARK_LOCAL_IP=spark-worker-a
+        SPARK_MASTER: "spark://spark-master:7077"
+        SPARK_WORKER_CORES: "1"
+        SPARK_WORKER_MEMORY: "4G"
+        SPARK_DRIVER_MEMORY: "1G"
+        SPARK_EXECUTOR_MEMORY: "4G"
+        SPARK_WORKLOAD: "worker"
+        SPARK_LOCAL_IP: "SPARK_PUBLIC_DNS"
       ports:
         - "8081:8081"
         - "8082:8080"
@@ -356,7 +355,6 @@ services:
         - "7078:7077"
       networks:
         - spark-network
-      network_mode: "host"
       volumes:
         - spark-worker-volume:/opt/spark-apps
         - spark-worker-volume:/opt/spark-data
