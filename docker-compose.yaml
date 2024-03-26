@@ -328,6 +328,7 @@ services:
         - "4040:4040"
       networks:
         - spark-network
+      network_mode: "host"
       volumes:
         - spark-master-volume:/opt/spark-apps
         - spark-master-volume:/opt/spark-data
@@ -347,7 +348,6 @@ services:
       - SPARK_EXECUTOR_MEMORY=4G
       - SPARK_WORKLOAD=worker
       - SPARK_LOCAL_IP=spark-worker-a
-      - SPARK_PUBLIC_DNS=spark-worker-a
       ports:
         - "8081:8081"
         - "8082:8080"
@@ -356,6 +356,7 @@ services:
         - "7078:7077"
       networks:
         - spark-network
+      network_mode: "host"
       volumes:
         - spark-worker-volume:/opt/spark-apps
         - spark-worker-volume:/opt/spark-data
