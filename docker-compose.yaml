@@ -297,6 +297,8 @@ services:
   #   restart: always
   #   volumes: 
   #   - pgadmin-data:/var/lib/pgadmin
+
+  ### PHIND SPARK IMAGE SOLUTION
   spark-master:
       image: spark-image
       command: /opt/spark/sbin/start-master.sh
