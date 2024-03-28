@@ -12,11 +12,11 @@ import os
 import json
 
 default_args = {
-    'owner': 'airflow',
-    'start_date': datetime(2024, 3, 20),
-    'retries': 3,
-    'schedule_interval': '*/20 * * * *',
-    'tags': ['dan']
+    "owner": "airflow",
+    "start_date": datetime(2024, 3, 20),
+    "retries": 3,
+    "schedule_interval": "*/20 * * * *",
+    "tags": ["dan"]
 }
 
 sqlalchemy_db = os.getenv("SQLALCHEMY_DB")
