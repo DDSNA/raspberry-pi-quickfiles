@@ -28,9 +28,10 @@ sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
 @dag(
     dag_id="Orders_Backup",
     description="DAG for backing up orders data",
-    default_args=default_args,
-    tags=["dan", "parquet"],
-    schedule_interval="weekly"
+    owner_links=["https://www.linkedin.com/in/dan-serban/"],
+    start_date=datetime(2024, 3, 29, 7, 30),
+    schedule= "@weekly",
+    tags=["dan", "parquet"]
     )
 
 
