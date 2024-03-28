@@ -28,7 +28,7 @@ sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
 @dag(
     dag_id="Orders_Backup",
     description="DAG for backing up orders data",
-    start_date=datetime(2024, 3, 29, 7, 30),
+    # start_date=datetime(2024, 3, 29, 7, 30),
     schedule= "@weekly",
     tags=["dan", "parquet"],
     catchup=False
