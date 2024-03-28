@@ -13,9 +13,7 @@ from airflow.decorators import dag, task
 default_args = {
     "owner": "airflow",
     "start_date": datetime(2024, 3, 29, 7, 30),
-    "retries": 5,
-    "schedule_interval": "@weekly",
-    "tags": ["dan", "parquet"]
+    "retries": 5
 }
 
 sqlalchemy_db = os.getenv("SQLALCHEMY_DB")
@@ -27,9 +25,12 @@ sqlalchemy_host_port = os.getenv("SQLALCHEMY_HOST_PORT")
 # this is railway not data analytics
 sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
 
-@dag("Orders_Backup",
+@dag(
+    dag_id="Orders_Backup",
     description="DAG for backing up orders data",
-    default_args=default_args
+    default_args=default_args,
+    tags=["dan", "parquet"],
+    schedule_interval="weekly"
     )
 
 
