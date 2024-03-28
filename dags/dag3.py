@@ -23,3 +23,10 @@ with DAG(
         )
         """,
     )
+
+    insert_user = PostgresOperator(
+        task_id="insert_user",
+        postgres_conn_id="postgres_default",
+        sql="INSERT INTO users (username, email, created_at) VALUES ('test', 'test', '2022-01-01')",
+    )
+    

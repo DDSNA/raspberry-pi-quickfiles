@@ -393,17 +393,17 @@ services:
   # #       - "8082:8081"
   # #       - "4043:4040"
 
-  # notebook:
-  #   image: jupyter/pyspark-notebook
-  #   depends_on:
-  #     - spark-master
-  #   ports:
-  #     - "8888:8888"
-  #   command: start-notebook.sh --NotebookApp.token='abcd1234'
-  #   volumes:
-  #     - notebook-data:/home/jovyan/work
-  #   networks:
-  #     - spark-network
+  notebook:
+    image: jupyter/pyspark-notebook
+    depends_on:
+      - spark-master
+    ports:
+      - "8888:8888"
+    command: start-notebook.sh --NotebookApp.token='abcd1234'
+    volumes:
+      - notebook-data:/home/jovyan/work
+    networks:
+      - spark-network
 
 volumes:
   postgres-db-volume:
