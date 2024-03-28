@@ -13,7 +13,7 @@ import json
 
 default_args = {
     'owner': 'airflow',
-    'start_date': datetime(2024, 3, 20),
+    'start_date': datetime(2024, 3, 29),
     'retries': 3,
     'schedule_interval': '@hourly',
     'tags': ['dan']
