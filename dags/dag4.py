@@ -28,7 +28,7 @@ sqlalchemy_host_port = os.getenv("SQLALCHEMY_HOST_PORT")
 # this is railway not data analytics
 sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
     
-@dag(".dan_dag_1",
+@dag("Dan_dag_1",
      description="My first dag with airflow",
      default_args=default_args
      )

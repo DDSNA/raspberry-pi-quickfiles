@@ -28,7 +28,7 @@ sqlalchemy_host_port = os.getenv("SQLALCHEMY_HOST_PORT")
 # this is railway not data analytics
 sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
     
-@dag(".scheduled_dag_20minutes",
+@dag("Dan scheduled_dag_20minutes",
      description="This dag should be scheduled for every 20 minutes",
      default_args=default_args,
      schedule_interval='*/20 * * * *'

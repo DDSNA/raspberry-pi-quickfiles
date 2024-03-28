@@ -4,11 +4,11 @@ from airflow.providers.postgres.operators.postgres import PostgresOperator
 from datetime import datetime
 
 with DAG(
-    dag_id="postgres_operator_dag",
+    dag_id="Dan_postgres_operator_dag",
     start_date=datetime(2022, 1, 1),
     schedule_interval="@once",
     catchup=False,
-    tags=["postgres", "operator"],
+    tags=["postgres", "operator", "dan"],
 ) as dag:
 
     create_table = PostgresOperator(
