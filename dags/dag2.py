@@ -15,7 +15,8 @@ default_args = {
     'owner': 'airflow',
     'start_date': datetime(2024, 3, 20),
     'retries': 3,
-    'schedule_interval': '@hourly'
+    'schedule_interval': '@hourly',
+    'tags': ['dan']
 }
 
 sqlalchemy_db = os.getenv("SQLALCHEMY_DB")

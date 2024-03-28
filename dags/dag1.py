@@ -15,7 +15,8 @@ default_args = {
     'owner': 'airflow',
     'start_date': datetime(2024, 3, 20),
     'retries': 3,
-    'schedule_interval': '*/20 * * * *'
+    'schedule_interval': '*/20 * * * *',
+    'tags': ['dan']
 }
 
 sqlalchemy_db = os.getenv("SQLALCHEMY_DB")
@@ -28,7 +29,7 @@ sqlalchemy_host_port = os.getenv("SQLALCHEMY_HOST_PORT")
 sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
     
 @dag(".dan_dag_1",
-     description="Simple dag",
+     description="My first dag with airflow",
      default_args=default_args
      )
 
