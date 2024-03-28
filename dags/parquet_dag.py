@@ -59,4 +59,4 @@ def dag_orders():
     save_orders_parquet(orders)
     store_orders()
 
-dag = dag_orders()
+dag_orders()
