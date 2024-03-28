@@ -5,7 +5,8 @@ import os
 from datetime import datetime
 
 from airflow import DAG
-from airflow.providers.google.cloud.hooks.gcs import GoogleCloudStorageHook
+from airflow.providers.google.cloud.hooks.gcs import GCSHook
+
 
 default_args = {
     "owner": "airflow",
@@ -43,20 +44,21 @@ def dag_orders():
     @task()
     def save_orders_parquet(orders: list):
         df = pd.DataFrame(orders)
-        df.to_parquet("orders.parquet")
+        parquet_file = df.to_parquet("orders.parquet")
+        return parquet_file
     
     @task()
-    def store_orders():
+    def store_orders(parquet_file: str):
         time_of_execution = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
         filename = str(time_of_execution) + "_orders.parquet"
         bucket_name = "airflow-bucket-prun"
         filepath = f"/{filename}"
 
-        gcs_hook = GoogleCloudStorageHook(gcp_conn_id='gc_conn')
+        gcs_hook = GCSHook(gcp_conn_id='gc_conn')
         gcs_hook.upload(bucket_name, filepath, "orders.parquet")
 
     orders = get_orders()
     save_orders_parquet(orders)
-    store_orders()
+    store_orders(save_orders_parquet(orders))
 
 dag_orders()
