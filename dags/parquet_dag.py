@@ -3,6 +3,7 @@ import psycopg2
 import os
 
 from datetime import datetime
+from sqlalchemy import create_engine, select
 
 from airflow import DAG
 from airflow.providers.google.cloud.hooks.gcs import GCSHook
@@ -33,7 +34,7 @@ sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
 
 
 def dag_orders():
-    engine =  engine = create_engine(f"{sqlalchemy_db}+{sqlalchemy_db_jdbc}://{sqlalchemy_username}:{sqlalchemy_password}@{sqlalchemy_host_address}:{sqlalchemy_host_port}/{sqlalchemy_host_database}")
+    engine = create_engine(f"{sqlalchemy_db}+{sqlalchemy_db_jdbc}://{sqlalchemy_username}:{sqlalchemy_password}@{sqlalchemy_host_address}:{sqlalchemy_host_port}/{sqlalchemy_host_database}")
     
     @task()
     def get_orders():
