@@ -6,6 +6,7 @@ from datetime import datetime
 
 from airflow import DAG
 from airflow.providers.google.cloud.hooks.gcs import GCSHook
+from airflow.decorators import dag, task
 
 
 default_args = {
@@ -26,9 +27,9 @@ sqlalchemy_host_port = os.getenv("SQLALCHEMY_HOST_PORT")
 sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
 
 @dag("Orders_Backup",
-        description="DAG for backing up orders data",
-        default_args=default_args
-        )
+    description="DAG for backing up orders data",
+    default_args=default_args
+    )
 
 
 def dag_orders():
