@@ -16,7 +16,8 @@ default_args = {
     'start_date': datetime(2024, 3, 29),
     'retries': 3,
     'schedule_interval': '@hourly',
-    'tags': ['dan']
+    'tags': ['dan'],
+    'catchup':"False"
 }
 
 sqlalchemy_db = os.getenv("SQLALCHEMY_DB")

@@ -5,6 +5,8 @@ import os
 from datetime import datetime
 from sqlalchemy import create_engine, select
 
+import pydantic
+
 from airflow import DAG
 from airflow.providers.google.cloud.hooks.gcs import GCSHook
 from airflow.decorators import dag, task
@@ -13,7 +15,8 @@ from airflow.decorators import dag, task
 default_args = {
     "owner": "airflow",
     "start_date": datetime(2024, 3, 29, 7, 30),
-    "retries": 5
+    "retries": 5,
+    "catchup":"False"
 }
 
 sqlalchemy_db = os.getenv("SQLALCHEMY_DB")
@@ -40,11 +43,12 @@ def dag_orders():
     
     @task()
     def get_orders():
-        with engine.connect() as connection:
-            result = connection.execute("SELECT * FROM prun_data.temporary_df_hold_orders")
-            orders = result.fetchall()
-            return orders
-        
+        stmt = """
+                SELECT * FROM prun_data.temporary_df_hold_orders
+                """
+        result = engine.connect().execute(stmt)
+        orders = result.fetchall()
+        return orders
     @task()
     def save_orders_parquet(orders: list):
         df = pd.DataFrame(orders)

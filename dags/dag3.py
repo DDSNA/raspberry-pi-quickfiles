@@ -9,6 +9,7 @@ with DAG(
     schedule_interval="@once",
     catchup=False,
     tags=["postgres", "operator", "dan"],
+    catchup=False
 ) as dag:
 
     create_table = PostgresOperator(
