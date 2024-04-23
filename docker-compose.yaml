@@ -413,8 +413,8 @@ services:
       POSTGRES_USER: dan_experiments
       POSTGRES_PASSWORD: danpass
       POSTGRES_DB: postgres
-    expose:
-      - 5432
+    ports:
+    - "5432:5432"
     volumes:
       - dedicated-db-volume:/var/lib/postgresql/data
     healthcheck:
