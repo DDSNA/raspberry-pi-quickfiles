@@ -416,7 +416,7 @@ services:
     expose:
       - 5432
     volumes:
-      - postgres-db-volume:/var/lib/postgresql/data
+      - dedicated-db-volume:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "dan_experiments"]
       interval: 30s
@@ -427,6 +427,8 @@ services:
 
 volumes:
   postgres-db-volume:
+  dedicated-postgres-db-volume:
+    name: dedicated-db-volume
   pgadmin-data:
       name: pgadmin-data
   spark-data:
