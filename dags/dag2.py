@@ -16,7 +16,7 @@ default_args = {
     'start_date': datetime(2024, 3, 29),
     'retries': 3,
     'schedule_interval': '@hourly',
-    'tags': ['dan'],
+    'tags': ['test-tag'],
     'catchup':"False"
 }
 
@@ -29,7 +29,7 @@ sqlalchemy_host_port = os.getenv("SQLALCHEMY_HOST_PORT")
 # this is railway not data analytics
 sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
     
-@dag("Dan_scheduled_dag_20minutes",
+@dag("test_scheduled_dag_20minutes",
      description="This dag should be scheduled for every 20 minutes",
      default_args=default_args,
      schedule_interval='*/20 * * * *'
