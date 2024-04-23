@@ -396,7 +396,7 @@ services:
   notebook:
     image: jupyter/pyspark-notebook
     depends_on:
-      - spark-master
+      pg-admin-init
     ports:
       - "8888:8888"
     command: start-notebook.sh --NotebookApp.token='abcd1234'
