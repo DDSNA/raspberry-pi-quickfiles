@@ -416,7 +416,7 @@ services:
     ports:
     - "5432:5432"
     volumes:
-      - dedicated-db-volume:/var/lib/postgresql/data
+      - dedicated-postgres-db-volume:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "dan_experiments"]
       interval: 30s
