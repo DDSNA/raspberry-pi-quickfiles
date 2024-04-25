@@ -33,7 +33,6 @@ sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
      description="My first dag with airflow",
      default_args=default_args
      )
-
 def basic_dag():
     @task()
     def extract():

@@ -36,8 +36,6 @@ sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
     tags=["dan", "parquet"],
     catchup=False
     )
-
-
 def dag_orders():
     engine = create_engine(f"{sqlalchemy_db}+{sqlalchemy_db_jdbc}://{sqlalchemy_username}:{sqlalchemy_password}@{sqlalchemy_host_address}:{sqlalchemy_host_port}/{sqlalchemy_host_database}")
     

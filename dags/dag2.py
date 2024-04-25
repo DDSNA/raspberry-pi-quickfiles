@@ -34,7 +34,6 @@ sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
      default_args=default_args,
      schedule_interval='*/20 * * * *'
      )
-
 def basic_dag():
     @task()
     def extract():
