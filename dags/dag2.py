@@ -32,7 +32,8 @@ sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
 @dag("test_scheduled_dag_20minutes",
      description="This dag should be scheduled for every 20 minutes",
      default_args=default_args,
-     schedule_interval='*/20 * * * *'
+     schedule_interval='*/20 * * * *',
+     catchup=False
      )
 def basic_dag():
     @task()
