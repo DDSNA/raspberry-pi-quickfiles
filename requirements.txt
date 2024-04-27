@@ -4,3 +4,5 @@ pathlib>=1.0.1
 requests>=2.21.0
 argparse>=1.1
 psycopg2-binary>=2.8.2
+apache-airflow-providers-apache-spark>=4.7.2
+apache-airflow-providers-snowflake
