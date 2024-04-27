@@ -34,5 +34,5 @@ with DAG('spark_submit_job',
         """
      )
     
-submit_job > load_to_snowflake
+submit_job >> load_to_snowflake
     
