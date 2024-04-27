@@ -26,7 +26,12 @@ with DAG('spark_submit_job',
          task_id='load_to_snowflake',
          snowflake_conn_id='snowflake_default',
          database="SNOWFLAKE_SPARK",
-         schema="PUBLIC"
+         schema="PUBLIC",
+         sql=f"""
+            COPY INTO your_table
+            FROM '@your_stage/yourfile'
+            FILE_FORMAT = (TYPE = 'CSV')
+        """
      )
     
     
