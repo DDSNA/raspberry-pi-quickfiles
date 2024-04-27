@@ -24,11 +24,9 @@ with DAG('spark_submit_job',
     
     load_to_snowflake = SnowflakeOperator(
         task_id='load_to_snowflake',
-        snowflake_conn_id='snowflake_default'
-        sql="""
-            COPY INTO SPARK_SNOWFLAKE
-            FROM '@your_stage/your_file'
-            FILE_FORMAT = (TYPE = 'CSV')
-            """
+        snowflake_conn_id='snowflake_default',
+        database="SNOWFLAKE_SPARK",
+        schema="PUBLIC"
     )
+    
     
