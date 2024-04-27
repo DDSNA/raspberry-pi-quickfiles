@@ -22,11 +22,11 @@ with DAG('spark_submit_job',
         verbose=True
     )
     
-    load_to_snowflake = SnowflakeOperator(
-        task_id='load_to_snowflake',
-        snowflake_conn_id='snowflake_default',
-        database="SNOWFLAKE_SPARK",
-        schema="PUBLIC"
-    )
+    # load_to_snowflake = SnowflakeOperator(
+    #     task_id='load_to_snowflake',
+    #     snowflake_conn_id='snowflake_default',
+    #     database="SNOWFLAKE_SPARK",
+    #     schema="PUBLIC"
+    # )
     
     
