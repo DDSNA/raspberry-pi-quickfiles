@@ -1,5 +1,4 @@
 FROM apache/airflow:2.9.0
-ARG AIRFLOW_VERSION="2.9.0"
 
 USER root
 RUN apt-get update \
@@ -11,5 +10,5 @@ RUN apt-get update \
 
 USER airflow
 
-RUN pip install --no-cache-dir 'apache-airflow==${AIFLOW-VERSION}' lxml
-RUN pip install --no-cache-dir 'apache-airflow==${AIFLOW-VERSION}' apache-airflow-providers-apache-spark
+RUN pip install --no-cache-dir 'apache-airflow==2.9.0' lxml
+RUN pip install --no-cache-dir 'apache-airflow==2.9.0' apache-airflow-providers-apache-spark
