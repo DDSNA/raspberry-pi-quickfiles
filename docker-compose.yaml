@@ -88,6 +88,8 @@ x-airflow-common:
       condition: service_healthy
     postgres:
       condition: service_healthy
+  run:
+  - "pip install apache-airflow-providers-apache-spark"
 
 services:
   postgres:
