@@ -112,4 +112,4 @@ RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-zendesk
 
 # Removing conflicts
-RUN pip uninstall typing
+RUN pip uninstall typing -y
