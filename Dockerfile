@@ -1,5 +1,5 @@
 FROM apache/airflow:2.9.0
-FROM python3:latest AS build
+# FROM python3:latest AS build
 
 ENV AIRFLOW_VERSION="2.9.0"
 ARG AIRFLOW_VERSION="2.9.0"
@@ -16,7 +16,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 USER airflow
-
+RUN pip install --no-cache-dir grpcio-tools
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" lxml
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-spark
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-databricks
