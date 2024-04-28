@@ -23,7 +23,7 @@ RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-airbyte
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-alibaba
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-amazon
-RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-beam
+# RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-beam
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-cassandra
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-drill
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-druid
