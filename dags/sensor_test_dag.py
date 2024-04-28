@@ -22,7 +22,7 @@ some_args = {
 
 local_file_destination = "../materials"
 @dag(
-    dag_id='Sensor DAG for Market Stocks Daily Update',
+    dag_id='sensor_test_dag',
     description='Checks daily if the condition is true or false',
     default_args=some_args,
     )
@@ -34,7 +34,7 @@ def dataset_producer_dag():
         api_key = Variable.get('stock_market_source_api_key')
         api_link= Variable.get('stock_market_source_api_link')
         api_countries: dict[str, list[str]] = Variable.get('stock_market_countries')
-        api_country = api_countries[0[0]]
+        api_country = api_countries["stock_market_countries"][0]
         try:
             data = requests.get(
                 url=f'https://api.tradingeconomics.com/country/{api_country}?',
@@ -54,7 +54,7 @@ def dataset_producer_dag():
     def upload_json_to_blob(json_string:str):
         import json
         json = json.loads(json_string)
-        api_countries: dict[str, list[str]] = Variable.get('stock_market_countries')
+        api_countries = Variable.get('stock_market_countries')
         api_country = api_countries[0[0]]
         with open("../materials/data.json", "w") as outfile:
             json.dump(json, outfile, indent=4)  # Add indent for readability
@@ -94,4 +94,6 @@ dataset_producer_dag()
         #     zip_info = zip_ref.infolist()
         #     print(zip_info)
         #     zip_ref.extractall("../materials")
+
+        # {"stock_market_countries":["Mexico", "New Zealand", "Sweden", "Thailand"]}
 

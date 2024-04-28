@@ -2191,3 +2191,802 @@ Traceback (most recent call last):
 SyntaxError: keyword argument repeated: catchup
 [2024-04-28T20:51:24.056+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
 [2024-04-28T20:51:24.120+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.101 seconds
+[2024-04-28T20:57:37.541+0000] {processor.py:161} INFO - Started process (PID=47) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T20:57:37.548+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T20:57:37.554+0000] {logging_mixin.py:188} INFO - [2024-04-28T20:57:37.553+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T20:57:37.565+0000] {logging_mixin.py:188} INFO - [2024-04-28T20:57:37.561+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T20:57:37.567+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T20:57:37.646+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.148 seconds
+[2024-04-28T20:58:35.042+0000] {processor.py:161} INFO - Started process (PID=118) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T20:58:35.046+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T20:58:35.056+0000] {logging_mixin.py:188} INFO - [2024-04-28T20:58:35.054+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T20:58:35.073+0000] {logging_mixin.py:188} INFO - [2024-04-28T20:58:35.065+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T20:58:35.076+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T20:58:35.182+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.167 seconds
+[2024-04-28T20:59:06.160+0000] {processor.py:161} INFO - Started process (PID=181) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T20:59:06.164+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T20:59:06.173+0000] {logging_mixin.py:188} INFO - [2024-04-28T20:59:06.171+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T20:59:06.189+0000] {logging_mixin.py:188} INFO - [2024-04-28T20:59:06.180+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T20:59:06.195+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T20:59:06.326+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.211 seconds
+[2024-04-28T21:09:42.764+0000] {processor.py:161} INFO - Started process (PID=47) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:09:42.767+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:09:42.773+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:09:42.772+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:09:42.785+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:09:42.780+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:09:42.787+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:09:42.886+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.150 seconds
+[2024-04-28T21:10:57.646+0000] {processor.py:161} INFO - Started process (PID=118) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:10:57.650+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:10:57.657+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:10:57.656+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:10:57.670+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:10:57.665+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:10:57.673+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:10:57.786+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.164 seconds
+[2024-04-28T21:11:28.330+0000] {processor.py:161} INFO - Started process (PID=177) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:11:28.334+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:11:28.353+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:11:28.349+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:11:28.372+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:11:28.364+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:11:28.378+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:11:28.599+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.313 seconds
+[2024-04-28T21:12:01.418+0000] {processor.py:161} INFO - Started process (PID=238) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:12:01.428+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:12:01.438+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:12:01.437+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:12:01.450+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:12:01.446+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:12:01.453+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:12:01.619+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.222 seconds
+[2024-04-28T21:12:40.976+0000] {processor.py:161} INFO - Started process (PID=293) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:12:40.981+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:12:40.998+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:12:40.994+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:12:41.068+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:12:41.057+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:12:41.078+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:12:41.299+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.384 seconds
+[2024-04-28T21:13:36.388+0000] {processor.py:161} INFO - Started process (PID=351) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:13:36.412+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:13:36.497+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:13:36.462+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:13:36.574+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:13:36.549+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:13:36.610+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:13:37.108+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.920 seconds
+[2024-04-28T21:14:38.819+0000] {processor.py:161} INFO - Started process (PID=419) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:14:38.826+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:14:38.874+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:14:38.872+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:14:38.978+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:14:38.963+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:14:38.986+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:14:39.345+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.603 seconds
+[2024-04-28T21:15:20.869+0000] {processor.py:161} INFO - Started process (PID=478) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:15:20.876+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:15:20.893+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:15:20.892+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:15:20.929+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:15:20.917+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:15:20.936+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:15:21.095+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.251 seconds
+[2024-04-28T21:15:59.142+0000] {processor.py:161} INFO - Started process (PID=539) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:15:59.182+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:15:59.238+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:15:59.237+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:15:59.327+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:15:59.304+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:15:59.333+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:15:59.846+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.850 seconds
+[2024-04-28T21:16:40.946+0000] {processor.py:161} INFO - Started process (PID=588) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:16:41.013+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:16:41.060+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:16:41.039+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:16:41.130+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:16:41.109+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:16:41.164+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:16:42.795+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 1.925 seconds
+[2024-04-28T21:17:29.869+0000] {processor.py:161} INFO - Started process (PID=652) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:17:29.873+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:17:29.884+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:17:29.882+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:17:29.896+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:17:29.892+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:17:29.897+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:17:30.192+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.347 seconds
+[2024-04-28T21:18:17.772+0000] {processor.py:161} INFO - Started process (PID=709) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:18:17.800+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:18:17.832+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:18:17.830+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:18:17.875+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:18:17.866+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:18:17.884+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:18:18.073+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.432 seconds
+[2024-04-28T21:18:50.576+0000] {processor.py:161} INFO - Started process (PID=766) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:18:50.581+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:18:50.602+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:18:50.600+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:18:50.645+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:18:50.624+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:18:50.655+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:18:50.909+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.415 seconds
+[2024-04-28T21:19:29.174+0000] {processor.py:161} INFO - Started process (PID=826) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:19:29.188+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:19:29.204+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:19:29.201+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:19:29.219+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:19:29.215+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:19:29.222+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:19:29.494+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.428 seconds
+[2024-04-28T21:20:27.665+0000] {processor.py:161} INFO - Started process (PID=889) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:20:27.728+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:20:27.798+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:20:27.796+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:20:27.882+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:20:27.872+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:20:27.887+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:20:33.120+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 5.511 seconds
+[2024-04-28T21:24:19.097+0000] {processor.py:161} INFO - Started process (PID=38) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:24:19.172+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:24:19.202+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:24:19.201+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:24:19.235+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:24:19.229+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:24:19.239+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:24:19.370+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.333 seconds
+[2024-04-28T21:25:03.951+0000] {processor.py:161} INFO - Started process (PID=103) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:25:03.955+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:25:03.964+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:25:03.961+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:25:03.976+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:25:03.972+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:25:03.978+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:25:04.147+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.244 seconds
+[2024-04-28T21:25:35.078+0000] {processor.py:161} INFO - Started process (PID=166) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:25:35.080+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:25:35.086+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:25:35.085+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:25:35.097+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:25:35.093+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:25:35.100+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:25:35.188+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.129 seconds
+[2024-04-28T21:26:05.932+0000] {processor.py:161} INFO - Started process (PID=229) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:26:05.936+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:26:05.944+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:26:05.942+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:26:05.956+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:26:05.952+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:26:05.958+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:26:06.049+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.141 seconds
+[2024-04-28T21:32:02.169+0000] {processor.py:161} INFO - Started process (PID=46) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:32:02.231+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:32:02.245+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:32:02.243+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:32:02.282+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:32:02.266+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:32:02.294+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:32:02.559+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.496 seconds
+[2024-04-28T21:33:19.742+0000] {processor.py:161} INFO - Started process (PID=116) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:33:19.752+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:33:19.760+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:33:19.759+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:33:19.778+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:33:19.771+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:33:19.780+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:33:19.964+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.251 seconds
+[2024-04-28T21:33:50.112+0000] {processor.py:161} INFO - Started process (PID=178) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:33:50.115+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:33:50.124+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:33:50.123+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:33:50.135+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:33:50.131+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:33:50.138+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:33:50.238+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.149 seconds
+[2024-04-28T21:36:45.853+0000] {processor.py:161} INFO - Started process (PID=39) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:36:45.880+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:36:45.910+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:36:45.908+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:36:45.975+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:36:45.950+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:36:45.977+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:36:46.544+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.779 seconds
+[2024-04-28T21:37:49.730+0000] {processor.py:161} INFO - Started process (PID=110) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:37:49.736+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:37:49.742+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:37:49.741+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:37:49.754+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:37:49.749+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:37:49.756+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:37:49.831+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.120 seconds
+[2024-04-28T21:38:19.924+0000] {processor.py:161} INFO - Started process (PID=166) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:38:19.927+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:38:19.934+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:38:19.933+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:38:19.944+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:38:19.940+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:38:19.946+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:38:20.029+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.122 seconds
+[2024-04-28T21:38:50.410+0000] {processor.py:161} INFO - Started process (PID=228) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:38:50.415+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:38:50.422+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:38:50.421+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:38:50.439+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:38:50.433+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:38:50.441+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:38:50.541+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.153 seconds
+[2024-04-28T21:39:21.068+0000] {processor.py:161} INFO - Started process (PID=289) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:39:21.071+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:39:21.077+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:39:21.076+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:39:21.086+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:39:21.082+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:39:21.087+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:39:21.146+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.096 seconds
+[2024-04-28T21:39:51.757+0000] {processor.py:161} INFO - Started process (PID=352) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:39:51.761+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:39:51.767+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:39:51.766+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:39:51.777+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:39:51.774+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:39:51.779+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:39:51.854+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.118 seconds
+[2024-04-28T21:40:22.011+0000] {processor.py:161} INFO - Started process (PID=415) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:40:22.014+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:40:22.019+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:40:22.018+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:40:22.027+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:40:22.024+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:40:22.028+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:40:22.078+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.081 seconds
+[2024-04-28T21:40:52.388+0000] {processor.py:161} INFO - Started process (PID=475) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:40:52.395+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:40:52.402+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:40:52.401+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:40:52.422+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:40:52.414+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:40:52.431+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:40:52.588+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.256 seconds
+[2024-04-28T21:41:23.043+0000] {processor.py:161} INFO - Started process (PID=538) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:41:23.046+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:41:23.053+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:41:23.052+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:41:23.063+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:41:23.059+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:41:23.064+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:41:23.138+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.118 seconds
+[2024-04-28T21:41:53.969+0000] {processor.py:161} INFO - Started process (PID=601) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:41:53.972+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:41:53.978+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:41:53.976+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:41:53.988+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:41:53.984+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:41:53.990+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:41:54.062+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.112 seconds
+[2024-04-28T21:42:24.822+0000] {processor.py:161} INFO - Started process (PID=664) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:42:24.826+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:42:24.833+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:42:24.831+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:42:24.841+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:42:24.838+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:42:24.843+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:42:24.902+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.101 seconds
+[2024-04-28T21:42:55.152+0000] {processor.py:161} INFO - Started process (PID=727) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:42:55.154+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:42:55.160+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:42:55.159+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:42:55.170+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:42:55.167+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:42:55.173+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:42:55.253+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.119 seconds
+[2024-04-28T21:43:25.408+0000] {processor.py:161} INFO - Started process (PID=790) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:43:25.412+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:43:25.421+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:43:25.420+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:43:25.436+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:43:25.431+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:43:25.439+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:43:25.500+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.118 seconds
+[2024-04-28T21:43:55.639+0000] {processor.py:161} INFO - Started process (PID=851) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:43:55.642+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:43:55.648+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:43:55.647+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:43:55.660+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:43:55.656+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:43:55.662+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:43:55.760+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.148 seconds
+[2024-04-28T21:44:25.891+0000] {processor.py:161} INFO - Started process (PID=914) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:44:25.894+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:44:25.899+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:44:25.898+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:44:25.906+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:44:25.904+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:44:25.908+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:44:25.956+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.080 seconds
+[2024-04-28T21:44:56.961+0000] {processor.py:161} INFO - Started process (PID=977) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:44:56.964+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:44:56.972+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:44:56.970+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:44:56.988+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:44:56.983+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:44:56.990+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:44:57.065+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.126 seconds
+[2024-04-28T21:45:27.461+0000] {processor.py:161} INFO - Started process (PID=1041) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:45:27.463+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:45:27.469+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:45:27.468+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:45:27.476+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:45:27.474+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:45:27.478+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:45:27.527+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.081 seconds
+[2024-04-28T21:45:58.027+0000] {processor.py:161} INFO - Started process (PID=1104) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:45:58.034+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:45:58.041+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:45:58.039+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:45:58.053+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:45:58.049+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:45:58.055+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:45:58.120+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.112 seconds
+[2024-04-28T21:46:28.500+0000] {processor.py:161} INFO - Started process (PID=1167) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:46:28.504+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:46:28.510+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:46:28.509+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:46:28.520+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:46:28.517+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:46:28.522+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:46:28.580+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.096 seconds
+[2024-04-28T21:46:58.891+0000] {processor.py:161} INFO - Started process (PID=1230) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:46:58.895+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:46:58.907+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:46:58.904+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:46:58.927+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:46:58.923+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:46:58.932+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:46:59.036+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.186 seconds
+[2024-04-28T21:47:29.249+0000] {processor.py:161} INFO - Started process (PID=1291) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T21:47:29.258+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T21:47:29.264+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:47:29.262+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T21:47:30.276+0000] {logging_mixin.py:188} INFO - [2024-04-28T21:47:29.270+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T21:47:30.278+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T21:47:30.569+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 1.334 seconds
+[2024-04-28T22:03:32.745+0000] {processor.py:161} INFO - Started process (PID=59) to work on /opt/airflow/dags/dag3.py
+[2024-04-28T22:03:32.755+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag3.py for tasks to queue
+[2024-04-28T22:03:32.772+0000] {logging_mixin.py:188} INFO - [2024-04-28T22:03:32.766+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dag3.py
+[2024-04-28T22:03:32.826+0000] {logging_mixin.py:188} INFO - [2024-04-28T22:03:32.808+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dag3.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag3.py", line 12
+    catchup=False
+    ^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: catchup
+[2024-04-28T22:03:32.837+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag3.py
+[2024-04-28T22:03:33.014+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag3.py took 0.358 seconds
