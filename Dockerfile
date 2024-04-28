@@ -29,8 +29,8 @@ RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-drill
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-druid
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-flink
-RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-hdfs
-RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-hive
+# RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-hdfs
+# RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-hive
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-impala
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-kafka
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-apache-kylin
