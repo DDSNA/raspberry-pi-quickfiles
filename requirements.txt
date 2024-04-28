@@ -7,3 +7,6 @@ pathlib>=1.0.1
 requests>=2.21.0
 argparse>=1.1
 psycopg2-binary>=2.8.2
+azure-storage-blob
+azure-identity
+apache-airflow-providers-microsoft-azure

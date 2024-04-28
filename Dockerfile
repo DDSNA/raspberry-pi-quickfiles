@@ -113,3 +113,4 @@ RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-
 
 # Removing conflicts
 RUN pip uninstall typing -y
+ENV AIRFLOW_VAR_stock_market_source_api_key=041470e6cc7b4fa:tgn6gznxxxfudur

@@ -1,0 +1,21 @@
+[2024-04-28T15:40:12.785+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-28T15:40:13.105+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_scheduled_dag_20minutes.extract scheduled__2024-04-28T15:20:00+00:00 [queued]>
+[2024-04-28T15:40:13.224+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_scheduled_dag_20minutes.extract scheduled__2024-04-28T15:20:00+00:00 [queued]>
+[2024-04-28T15:40:13.233+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 4
+[2024-04-28T15:40:13.373+0000] {taskinstance.py:2327} INFO - Executing <Task(_PythonDecoratedOperator): extract> on 2024-04-28 15:20:00+00:00
+[2024-04-28T15:40:13.423+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=125) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-28T15:40:13.433+0000] {standard_task_runner.py:63} INFO - Started process 134 to run task
+[2024-04-28T15:40:13.451+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'test_scheduled_dag_20minutes', 'extract', 'scheduled__2024-04-28T15:20:00+00:00', '--job-id', '66', '--raw', '--subdir', 'DAGS_FOLDER/dag2.py', '--cfg-path', '/tmp/tmpwqt8jk3v']
+[2024-04-28T15:40:13.462+0000] {standard_task_runner.py:91} INFO - Job 66: Subtask extract
+[2024-04-28T15:40:13.932+0000] {task_command.py:426} INFO - Running <TaskInstance: test_scheduled_dag_20minutes.extract scheduled__2024-04-28T15:20:00+00:00 [running]> on host 9ff320b99ca9
+[2024-04-28T15:40:14.686+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_scheduled_dag_20minutes' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2024-04-28T15:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-28T15:20:00+00:00'
+[2024-04-28T15:40:14.698+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-28T15:40:14.705+0000] {logging_mixin.py:188} INFO - Extracting data
+[2024-04-28T15:40:18.736+0000] {python.py:237} INFO - Done. Returned value was: {"MaterialTicker":{"0":"DW","1":"RAT","2":"RAT","3":"DW","4":"DW","5":"RAT"},"ExchangeCode":{"0":"CI1","1":"CI1","2":"CI1","3":"CI1","4":"CI1","5":"CI1"},"CompanyId":{"0":"350c2853250f34ca02058ba6c0900a11","1":"350c2853250f34ca02058ba6c0900a11","2":"350c2853250f34ca02058ba6c0900a11","3":"350c2853250f34ca02058ba6c0900a11","4":"350c2853250f34ca02058ba6c0900a11","5":"350c2853250f34ca02058ba6c0900a11"},"CompanyName":{"0":"Rhizomatic Ventures","1":"Rhizomatic Ventures","2":"Rhizomatic Ventures","3":"Rhizomatic Ventures","4":"Rhizomatic Ventures","5":"Rhizomatic Ventures"},"CompanyCode":{"0":"RHIZ","1":"RHIZ","2":"RHIZ","3":"RHIZ","4":"RHIZ","5":"RHIZ"},"ItemCount":{"0":1000,"1":400,"2":400,"3":1000,"4":1000,"5":400},"ItemCost":{"0":95.0,"1":110.0,"2":110.0,"3":95.0,"4":95.0,"5":110.0},"collection_timestamp":{"0":1709990332840,"1":1709990654456,"2":1709990332840,"3":1709990654456,"4":1709991287870,"5":1709991287870},"collection_date":{"0":1709942400000,"1":1709942400000,"2":1709942400000,"3":1709942400000,"4":1709942400000,"5":1709942400000}}
+[2024-04-28T15:40:18.749+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-28T15:40:19.026+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=test_scheduled_dag_20minutes, task_id=extract, execution_date=20240428T152000, start_date=20240428T154013, end_date=20240428T154019
+[2024-04-28T15:40:19.182+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-28T15:40:19.574+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-04-28T15:40:19.590+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
