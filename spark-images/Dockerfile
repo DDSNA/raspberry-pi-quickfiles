@@ -1,6 +1,6 @@
 ### handcrafted dockerfile for Spark
 
-FROM python:3.10-bullseye
+FROM python:3.12
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -9,7 +9,7 @@ RUN apt-get update && \
       vim \
       unzip \
       rsync \
-      openjdk-11-jdk \
+      openjdk-17-jdk \
       build-essential \
       software-properties-common \
       ssh && \
