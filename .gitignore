@@ -9,3 +9,5 @@ plugins
 logs/*
 logs/dag_processor_manager
 logs/
+docker-compose.yaml
+dags/__pycache__/

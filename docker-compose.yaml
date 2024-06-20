@@ -34,7 +34,7 @@
 # _AIRFLOW_WWW_USER_USERNAME   - Username for the administrator account (if requested).
 #                                Default: airflow
 # _AIRFLOW_WWW_USER_PASSWORD   - Password for the administrator account (if requested).
-#                                Default: airflow
+#                                Default: airflow2
 # _PIP_ADDITIONAL_REQUIREMENTS - Additional PIP requirements to add when starting all containers.
 #                                Use this option ONLY for quick checks. Installing requirements at container
 #                                startup is done EVERY TIME the service is started.
@@ -54,6 +54,7 @@ x-airflow-common:
   #  build: .
   environment:
     &airflow-common-env
+    AIRFLOW_UID: 1000
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
@@ -69,6 +70,7 @@ x-airflow-common:
     SQLALCHEMY_HOST_ADDRESS: "viaduct.proxy.rlwy.net"
     SQLALCHEMY_HOST_PORT: "53745"
     SQLALCHEMY_HOST_DATABASE: "railway"
+    DISCORD_WEBHOOK_URL: "https://discord.com/api/webhooks/1237883719105249293/k1-9FZ1gUUK0krFJj9Wow9X8ajV8dqKBeyx1QhxCHg98gL7IjPkJFTWSPYTNy9RPlu-o"
     # yamllint disable rule:line-length
     # Use simple http server on scheduler for health checks
     # See https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/logging-monitoring/check-health.html#scheduler-health-check-server
@@ -251,6 +253,8 @@ services:
       _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
       _PIP_ADDITIONAL_REQUIREMENTS: ''
+      _AIRFLOW_UID: 1000
+      AIRFLOW_UID: 1000
     user: "0:0"
     volumes:
       - ${AIRFLOW_PROJ_DIR:-.}:/sources
@@ -409,7 +413,7 @@ services:
   #   networks:
   #     - spark-network
 
-  pg_db:
+  pg-db-sandbox:
     image: postgres:latest
     environment:
       POSTGRES_USER: postgres
@@ -429,7 +433,51 @@ services:
       - pg-admin-init
 
 
+  monitoring:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    networks:
+      - spark-network
+      - default
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=grafanadan
+      - GF_SECURITY_ADMIN_USER=dan
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: always
+    depends_on:
+      - pg-admin-init
+    
+  node-exporter:
+    image: quay.io/prometheus/node-exporter:latest
+    container_name: node-exporter
+    network_mode: host
+    pid: host
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:9100/metrics"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    volumes:
+      - /:/host:ro,rslave
+    restart: always
+    command: --path.rootfs=/host
+    depends_on:
+      - monitoring
+    
+    
+
 volumes:
+  grafana-data:
+    name: grafana-data
   postgres-db-volume:
   dedicated-postgres-db-volume:
     name: dedicated-db-volume
