@@ -433,46 +433,45 @@ services:
       - pg-admin-init
 
 
-  monitoring:
-    image: grafana/grafana:latest
-    ports:
-      - "3000:3000"
-    healthcheck:
-      test: ["CMD", "curl", "--fail", "http://localhost:3000/"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 30s
-    networks:
-      - spark-network
-      - default
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=grafanadan
-      - GF_SECURITY_ADMIN_USER=dan
-    volumes:
-      - grafana-data:/var/lib/grafana
-    restart: always
-    depends_on:
-      - pg-admin-init
+#   monitoring:
+#     image: grafana/grafana:latest
+#     ports:
+#       - "3000:3000"
+#     healthcheck:
+#       test: ["CMD", "curl", "--fail", "http://localhost:3000/"]
+#       interval: 30s
+#       timeout: 10s
+#       retries: 5
+#       start_period: 30s
+#     networks:
+#       - spark-network
+#       - default
+#     environment:
+#       - GF_SECURITY_ADMIN_PASSWORD=grafanadan
+#       - GF_SECURITY_ADMIN_USER=dan
+#     volumes:
+#       - grafana-data:/var/lib/grafana
+#     restart: always
+#     depends_on:
+#       - pg-admin-init
     
-  node-exporter:
-    image: quay.io/prometheus/node-exporter:latest
-    container_name: node-exporter
-    network_mode: host
-    pid: host
-    healthcheck:
-      test: ["CMD", "curl", "--fail", "http://localhost:9100/metrics"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 30s
-    volumes:
-      - /:/host:ro,rslave
-    restart: always
-    command: --path.rootfs=/host
-    depends_on:
-      - monitoring
-    
+#   node-exporter:
+#     image: quay.io/prometheus/node-exporter:latest
+#     container_name: node-exporter
+#     network_mode: host
+#     pid: host
+#     healthcheck:
+#       test: ["CMD", "curl", "--fail", "http://localhost:9100/metrics"]
+#       interval: 30s
+#       timeout: 10s
+#       retries: 5
+#       start_period: 30s
+#     volumes:
+#       - /:/host:ro,rslave
+#     restart: always
+#     command: --path.rootfs=/host
+#     depends_on:
+#       - monitoring
     
 
 volumes:
