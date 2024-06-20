@@ -7,7 +7,6 @@ with DAG(
     dag_id="Dan_postgres_operator_dag",
     start_date=datetime(2022, 1, 1),
     schedule_interval="@once",
-    catchup=False,
     tags=["postgres", "operator", "dan"],
     catchup=False
 ) as dag:

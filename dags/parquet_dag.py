@@ -7,7 +7,7 @@ from sqlalchemy import create_engine, select
 
 import pydantic
 
-from airflow import DAG
+from airflow import DAG, Dataset
 from airflow.providers.google.cloud.hooks.gcs import GCSHook
 from airflow.decorators import dag, task
 
@@ -26,6 +26,11 @@ sqlalchemy_host_address = os.getenv("SQLALCHEMY_HOST_ADDRESS")
 sqlalchemy_host_port = os.getenv("SQLALCHEMY_HOST_PORT")
 # this is railway not data analytics
 sqlalchemy_host_database = os.getenv("SQLALCHEMY_HOST_DATABASE")
+
+# datasets
+csv_file = Dataset(
+    "gcp-dan://testing/dataset.parquet"
+)
 
 # handling
 def task_failure_discord_alert(context):
@@ -82,6 +87,6 @@ def dag_orders():
             pass
 
     orders = get_orders()
-    store_orders(save_orders_parquet(orders))
+    store_orders(save_orders_parquet(orders, cloud=True))
 
 dag_orders()

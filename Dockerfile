@@ -1,4 +1,4 @@
-FROM apache/airflow:2.9.0
+FROM apache/airflow:2.9.0-python3.12
 # FROM python3:latest AS build
 
 ENV AIRFLOW_VERSION="2.9.0"
@@ -68,7 +68,7 @@ RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-influxdb
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-jdbc
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-jenkins
-RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-microsoft-azure
+# RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-microsoft-azure
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-microsoft-mssql
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-microsoft-psrp
 RUN pip install --no-cache-dir "apache-airflow==2.9.0" apache-airflow-providers-microsoft-winrm
