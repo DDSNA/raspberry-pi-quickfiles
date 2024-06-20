@@ -34,7 +34,7 @@
 # _AIRFLOW_WWW_USER_USERNAME   - Username for the administrator account (if requested).
 #                                Default: airflow
 # _AIRFLOW_WWW_USER_PASSWORD   - Password for the administrator account (if requested).
-#                                Default: airflow
+#                                Default: airflow2
 # _PIP_ADDITIONAL_REQUIREMENTS - Additional PIP requirements to add when starting all containers.
 #                                Use this option ONLY for quick checks. Installing requirements at container
 #                                startup is done EVERY TIME the service is started.
@@ -49,10 +49,12 @@ x-airflow-common:
   # In order to add custom dependencies or upgrade provider packages you can use your extended image.
   # Comment the image line, place your Dockerfile in the directory where you placed the docker-compose.yaml
   # and uncomment the "build" line below, Then run `docker-compose build` to build the images.
-  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.8.1}
-  # build: .
+  # image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.9.0}
+  image: apache/airflow:2.9.0
+  #  build: .
   environment:
     &airflow-common-env
+    AIRFLOW_UID: 1000
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
@@ -68,6 +70,7 @@ x-airflow-common:
     SQLALCHEMY_HOST_ADDRESS: "viaduct.proxy.rlwy.net"
     SQLALCHEMY_HOST_PORT: "53745"
     SQLALCHEMY_HOST_DATABASE: "railway"
+    DISCORD_WEBHOOK_URL: "https://discord.com/api/webhooks/1237883719105249293/k1-9FZ1gUUK0krFJj9Wow9X8ajV8dqKBeyx1QhxCHg98gL7IjPkJFTWSPYTNy9RPlu-o"
     # yamllint disable rule:line-length
     # Use simple http server on scheduler for health checks
     # See https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/logging-monitoring/check-health.html#scheduler-health-check-server
@@ -75,7 +78,8 @@ x-airflow-common:
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
     # WARNING: Use _PIP_ADDITIONAL_REQUIREMENTS option ONLY for a quick checks
     # for other purpose (development, test and especially production usage) build/extend Airflow image.
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
+    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:- apache-airflow-providers-docker apache-airflow-providers-microsoft-mssql apache-airflow-providers-apache-spark apache-airflow-providers-postgres apache-airflow-providers-mysql apache-airflow-providers-apache-kafka apache-airflow-providers-google}
+    AIRFLOW__CORE__TEST_CONNECTION: 'Enabled'
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
@@ -96,6 +100,8 @@ services:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
       POSTGRES_DB: airflow
+    expose:
+      - 5432
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
     healthcheck:
@@ -247,6 +253,8 @@ services:
       _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
       _PIP_ADDITIONAL_REQUIREMENTS: ''
+      _AIRFLOW_UID: 1000
+      AIRFLOW_UID: 1000
     user: "0:0"
     volumes:
       - ${AIRFLOW_PROJ_DIR:-.}:/sources
@@ -286,57 +294,97 @@ services:
       airflow-init:
         condition: service_completed_successfully
 
-  # pg-admin-init:
-  #   image: dpage/pgadmin4:latest
-  #   environment:
-  #     PGADMIN_DEFAULT_EMAIL: danserban20@gmail.com
-  #     PGADMIN_DEFAULT_PASSWORD: dan
-  #   ports:
-  #     - "5430:80"
-  #   restart: always
-  #   volumes: 
-  #   - pgadmin-data:/var/lib/pgadmin
 
-
-  spark-ui:
-    image: bitnami/spark:latest
+  pg-admin-init:
+    image: dpage/pgadmin4:latest
     environment:
-    # needs to be updated whenever I relocate the raspberry pi
-      SPARK_DRIVER_HOST: "0.0.0.0"
-      SPARK_DRIVER_BINDADDRESS: "0.0.0.0"
-      SPARK_MASTER: spark://spark-master:7077
-      MAIN_CLASS: Main
+      PGADMIN_DEFAULT_EMAIL: danserban20@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: dan
     ports:
-      - "4040:4040"
-      - "4041:8080"
-    networks:
-      - spark-network
-      
-  spark-master:
-      image: bitnami/spark:latest
-      ports:
-        - "9092:8080"
-        - "7077:7077"
-        - "4043:4040"
-        - "8998:8998"
-        - "8887:8888"
-      networks:
-        - spark-network
+      - "5430:80"
+    restart: always
+    volumes: 
+    - pgadmin-data:/var/lib/pgadmin
 
-  spark-worker-1:
-      image: bitnami/spark:latest
-      depends_on:
-        - spark-master
-      environment:
-        SPARK_MODE: worker
-        SPARK_WORKER_CORES: 1
-        SPARK_WORKER_MEMORY: 4g
-        SPARK_MASTER_URL: spark://spark-master:7077
-      ports:
-        - "8081:8081"
-        - "4042:4040"
-      networks:
-        - spark-network
+  ### PHIND SPARK IMAGE SOLUTION
+  # spark-master:
+  #     image: spark-image
+  #     command: /opt/spark/sbin/start-master.sh
+  #     ports:
+  #       - "7077:7077"
+  #       - "8085:8080"
+  #     environment:
+  #       - SPARK_MASTER_HOST=spark-master
+
+  # spark-worker:
+  #     image: spark-image
+  #     command: /opt/spark/sbin/start-worker.sh spark://spark-master:7077
+  #     depends_on:
+  #       - spark-master
+  #     environment:
+  #       - SPARK_WORKER_CORES=1
+  #       - SPARK_WORKER_MEMORY=1g
+
+  # spark-ui:
+  #   image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
+  #   environment:
+  #   # needs to be updated whenever I relocate the raspberry pi
+  #     SPARK_DRIVER_HOST: "0.0.0.0"
+  #     SPARK_DRIVER_BINDADDRESS: "0.0.0.0"
+  #     SPARK_MASTER: spark://spark-master:7077
+  #     MAIN_CLASS: Main
+  #   ports:
+  #     - "4039:4040"
+  #     - "4038:8080"
+  #   networks:
+  #     - spark-network
+  #   command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+      
+  # spark-master:
+  #     image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
+  #     environment:
+  #       SPARK_MODE: master
+  #       SPARK_MASTER_PORT_NUMBER: "7077"
+  #       SPARK_MASTER_WEBUI_PORT_NUMBER: "8080"
+  #       SPARK_MASTER_LOG_LEVEL: INFO
+  #       SPARK_MASTER_HOST: "192.168.1.139"
+  #     ports:
+  #       - "7080:8080"
+  #       - "7077:7077"
+  #       - "4040:4040"
+  #     networks:
+  #       - spark-network
+  #     volumes:
+  #       - spark-master-volume:/opt/spark-apps
+  #       - spark-master-volume:/opt/spark-data
+  #     command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+  #     depends_on:
+  #       - spark-ui
+
+  # spark-worker-a:
+  #     image: apache/spark:3.5.1-scala2.12-java17-python3-ubuntu
+  #     depends_on:
+  #       - spark-master
+  #     environment:
+  #       SPARK_MASTER: "spark://spark-master:7077"
+  #       SPARK_WORKER_CORES: "1"
+  #       SPARK_WORKER_MEMORY: "4G"
+  #       SPARK_DRIVER_MEMORY: "1G"
+  #       SPARK_EXECUTOR_MEMORY: "4G"
+  #       SPARK_WORKLOAD: "worker"
+  #       SPARK_LOCAL_IP: "192.168.1.139"
+  #     ports:
+  #       - "8081:8081"
+  #       - "8082:8080"
+  #       - "4042:4040"
+  #       - "7000:7000"
+  #       - "7078:7077"
+  #     networks:
+  #       - spark-network
+  #     volumes:
+  #       - spark-worker-volume:/opt/spark-apps
+  #       - spark-worker-volume:/opt/spark-data
+  #     command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
 
   # # spark-worker-2:
   # #     image: apache/spark-py:latest
@@ -356,7 +404,7 @@ services:
   # notebook:
   #   image: jupyter/pyspark-notebook
   #   depends_on:
-  #     - airflow-webserver
+  #     - pg-admin-init
   #   ports:
   #     - "8888:8888"
   #   command: start-notebook.sh --NotebookApp.token='abcd1234'
@@ -365,14 +413,83 @@ services:
   #   networks:
   #     - spark-network
 
+  pg-db-sandbox:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: danpass
+      POSTGRES_DB: postgres
+    ports:
+    - "5432:5432"
+    volumes:
+      - dedicated-postgres-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 30s
+      retries: 5
+      start_period: 5s
+    restart: always
+    depends_on:
+      - pg-admin-init
+
+
+#   monitoring:
+#     image: grafana/grafana:latest
+#     ports:
+#       - "3000:3000"
+#     healthcheck:
+#       test: ["CMD", "curl", "--fail", "http://localhost:3000/"]
+#       interval: 30s
+#       timeout: 10s
+#       retries: 5
+#       start_period: 30s
+#     networks:
+#       - spark-network
+#       - default
+#     environment:
+#       - GF_SECURITY_ADMIN_PASSWORD=grafanadan
+#       - GF_SECURITY_ADMIN_USER=dan
+#     volumes:
+#       - grafana-data:/var/lib/grafana
+#     restart: always
+#     depends_on:
+#       - pg-admin-init
+    
+#   node-exporter:
+#     image: quay.io/prometheus/node-exporter:latest
+#     container_name: node-exporter
+#     network_mode: host
+#     pid: host
+#     healthcheck:
+#       test: ["CMD", "curl", "--fail", "http://localhost:9100/metrics"]
+#       interval: 30s
+#       timeout: 10s
+#       retries: 5
+#       start_period: 30s
+#     volumes:
+#       - /:/host:ro,rslave
+#     restart: always
+#     command: --path.rootfs=/host
+#     depends_on:
+#       - monitoring
+    
+
 volumes:
+  grafana-data:
+    name: grafana-data
   postgres-db-volume:
+  dedicated-postgres-db-volume:
+    name: dedicated-db-volume
   pgadmin-data:
       name: pgadmin-data
   spark-data:
       name: spark-data
   notebook-data:
       name: notebook-data
+  spark-worker-volume:
+      name: spark-worker-volume
+  spark-master-volume:
+      name: spark-master-volume
 
 networks:
   spark-network:

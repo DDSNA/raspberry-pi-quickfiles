@@ -1,0 +1,15 @@
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/raspberry-pi-quickfiles.iml
+.idea/workspace.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
+plugins
+logs/*
+logs/dag_processor_manager
+logs/
+docker-compose.yaml
+dags/__pycache__/
+dataset.csv
+dataset.parquet
