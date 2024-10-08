@@ -19,3 +19,12 @@ teardown-dev:
 compose-up:
 	echo "Starting up"
 	sudo docker compose up -d
+
+build:
+	docker compose build
+
+build-nc:
+	docker compose build --no-cache
+
+build-progress:
+	docker compose build --no-cache --progress=plain
