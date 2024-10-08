@@ -1,4 +1,5 @@
-# Data Engineering Project - Airflow usage with cloud and on prem services integration
+# Data Engineering Project 
+## Airflow usage with cloud and on prem services integration
 
 ## Scope
 Portofolio of projects aimed to demonstrate general usage of Airflow run locally with various integrations relevant to the current technologies market.
@@ -14,7 +15,7 @@ Portofolio of projects aimed to demonstrate general usage of Airflow run locally
 4. spark-images
     - **Definition**: Directory containing the spark dockerfile currently used in conjunction with airflow.
 ### Files
-1. env
+1. .env
     - **Definition**: Mock file used to store environment variables that would normally not be stored on a file accessible to code/repository viewers for security and privacy reasons.
 2. .gitignore
     - **Definition**: File used for git instructions to declutter the repository from image usage artefacts.
@@ -23,7 +24,7 @@ Portofolio of projects aimed to demonstrate general usage of Airflow run locally
 4. docker-compose.yaml
     - **Definition**: File used by Docker to quickly build up custom containers and instructions for their interaction/networking capabilities.
 5. Dockerfile
-    - **Definition**: File used by Docker to build an image based on the instructions within. Contains customized Airflow installation with multiple community connectors added for functionality extension. Uses Airflow 2.9.0 as a base image from [docker hub repository][https://hub.docker.com/layers/apache/airflow/2.9.0-python3.12/images/sha256-2cc3cc965f2d2ab1603d655a30769ed59b45506aec1dbaedb761e998fa54ae2d?context=explore]
+    - **Definition**: File used by Docker to build an image based on the instructions within. Contains customized Airflow installation with multiple community connectors added for functionality extension. Uses Airflow 2.9.0 as a base image from [docker hub repository](https://hub.docker.com/layers/apache/airflow/2.9.0-python3.12/images/sha256-2cc3cc965f2d2ab1603d655a30769ed59b45506aec1dbaedb761e998fa54ae2d?context=explore)
 6. Makefile
     - **Definition**: Make file used to create custom commands for easier setup/deconstruction of containers/images. Handy given some limitations
 
