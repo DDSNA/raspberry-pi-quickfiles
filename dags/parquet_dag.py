@@ -5,8 +5,6 @@ import os
 from datetime import datetime
 from sqlalchemy import create_engine, select
 
-import pydantic
-
 from airflow import DAG, Dataset
 from airflow.providers.google.cloud.hooks.gcs import GCSHook
 from airflow.decorators import dag, task
@@ -67,13 +65,13 @@ def dag_orders():
         orders = result.fetchall()
         return orders
     @task()
-    def save_orders_parquet(orders: list):
+    def save_orders_parquet(orders: list, cloud: bool):
         df = pd.DataFrame(orders)
         parquet_file = df.to_parquet("orders.parquet")
         return parquet_file
     
     @task()
-    def store_orders(parquet_file: str, cloud: bool):
+    def store_orders(parquet_file: str, cloud=True):
         time_of_execution = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
         filename = str(time_of_execution) + "_orders.parquet"
 
@@ -87,6 +85,9 @@ def dag_orders():
             pass
 
     orders = get_orders()
-    store_orders(save_orders_parquet(orders, cloud=True))
+    store_orders(
+        save_orders_parquet(orders, cloud=True),
+        cloud=True
+        )
 
 dag_orders()
