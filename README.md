@@ -26,7 +26,7 @@ Portofolio of projects aimed to demonstrate general usage of Airflow run locally
 2. .gitignore
    - **Usage**: File used for git instructions to declutter the repository from image usage artefacts.
 3. config_local.py
-   - **Usage**: File used for Postgres database configuration. Used in docker-compose.yaml for various customization and replication of objects for quick setup/recovery.
+   - **Usage**: File used for PgAdmin 4 configuration. Used in docker-compose.yaml for various customization and replication of objects for quick setup/recovery.
 4. docker-compose.yaml
    - **Usage**: File used by Docker to quickly build up custom containers and instructions for their interaction/networking capabilities.
 5. Dockerfile
@@ -42,7 +42,7 @@ Portofolio of projects aimed to demonstrate general usage of Airflow run locally
 2. Airflow support software such as a Redis database and a Postgresql database
 3. Independent Postgresql database for sandboxing purposes
 4. PgAdmin dependent on the Postgresql database mentioned above
-5. (Optional) Spark image that can be built and enabled to connect with the Airflow system
+5. (Optional) Spark image that can be built locally and enabled to connect with the Airflow system
 
 Prerequisites: Docker, Make (optional)
 
