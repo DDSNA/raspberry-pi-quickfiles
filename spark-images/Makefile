@@ -23,4 +23,4 @@ stop:
 	docker compose stop
 
 submit:
-	docker exec da-spark-worker spark-submit --master spark://192.168.0.38:7077 --deploy-mode client ./apps/$(app)
+	docker exec da-spark-worker spark-submit --master spark://35.205.22.229:7077 --deploy-mode client ./apps/$(app)

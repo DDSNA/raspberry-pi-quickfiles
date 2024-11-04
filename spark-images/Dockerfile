@@ -26,6 +26,8 @@ RUN curl https://dlcdn.apache.org/spark/spark-3.5.3/spark-3.5.3-bin-hadoop3.tgz 
  && tar xvzf spark-3.5.3-bin-hadoop3.tgz --directory /opt/spark --strip-components 1 \
  && rm -rf spark-3.5.3-bin-hadoop3.tgz
 
+RUN curl https://jdbc.postgresql.org/download/postgresql-42.7.4.jar -O
+
 COPY requirements/requirements.txt .
 RUN pip3 install -r requirements.txt
 
