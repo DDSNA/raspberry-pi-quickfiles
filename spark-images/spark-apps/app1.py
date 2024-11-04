@@ -1,7 +1,8 @@
 from pyspark.sql import SparkSession
 import requests
 
-spark = SparkSession.builder \
+spark: SparkSession = SparkSession.builder \
+    .master("sc://35.187.102.232:7077") \
     .appName("PostgreSQL Connection") \
     .config("spark.jars", "./postgresql-42.7.4.jar") \
     .getOrCreate()
