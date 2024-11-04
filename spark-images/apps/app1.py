@@ -1,5 +1,8 @@
-from pyspark.sql import SparkSession
+import sys
+sys.path.append('/usr/local/lib/python3.11/dist-packages')
 import requests
+
+from pyspark.sql import SparkSession
 
 spark: SparkSession = SparkSession.builder \
     .appName("PostgreSQL Connection") \
