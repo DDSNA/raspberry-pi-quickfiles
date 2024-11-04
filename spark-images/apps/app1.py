@@ -1,8 +1,7 @@
-import sys
-sys.path.append('/usr/local/lib/python3.11/dist-packages')
-import requests
-
 from pyspark.sql import SparkSession
+
+from urllib.request import Request, urlopen
+import requests
 
 spark: SparkSession = SparkSession.builder \
     .appName("PostgreSQL Connection") \

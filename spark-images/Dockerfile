@@ -44,6 +44,8 @@ RUN chmod u+x /opt/spark/sbin/* && \
     chmod u+x /opt/spark/bin/*
 
 ENV PYTHONPATH=$SPARK_HOME/python/:$PYTHONPATH
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
 
 COPY entrypoint.sh .
 ADD ./apps ./spark-apps
