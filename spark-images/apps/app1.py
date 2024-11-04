@@ -12,3 +12,14 @@ with open("wikipedia-20230701.zip", "wb") as file:
 
 df = spark.read.option("header", "true").csv("wikipedia-20230701.zip")
 
+
+database_host = "viaduct.proxy.rlwy.net"
+database_port = "53745" # update if you use a non-default port
+database_name = "railway"
+table = "prun_data.temporary_df_hold_bids"
+user = "databricks_user"
+password = "Databricks"
+
+url = f"jdbc:postgresql://{database_host}:{database_port}/{database_name}"
+
+
